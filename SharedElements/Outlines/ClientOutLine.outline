@@ -1,0 +1,26 @@
+<?xml version='1.0' encoding='utf-8'?>
+<outline name='ClientOutLine' alias='ClientOutLine' xmlns='http://www.lotus.com/dxl'
+ version='12.0' maintenanceversion='2.2' publicaccess='false' designerversion='8.5.3'>
+<noteinfo noteid='2e0' unid='6B7C8D9E0F12A3B4C5D6E7F8091A2B3C' sequence='1'/>
+<updatedby><name>CN=B11109006/O=XRedSchool</name></updatedby>
+<wassignedby><name>CN=B11109006/O=XRedSchool</name></wassignedby>
+
+<!-- 群組:房間資料管理 -->
+<outlineentry title='🏠 房間資料' type='view' target='VRoom' />
+
+<!-- 群組:宿舍申請管理 -->
+<outlineentry title='📋 宿舍申請' type='view' target='VDormApp' />
+<outlineentry title='   ⏳ 待審核' type='view' target='VDormApp_Pending' />
+<outlineentry title='   ✅ 已核准' type='view' target='VDormApp_Approved' />
+
+<!-- 群組:違規記錄管理 -->
+<outlineentry title='⚠️ 違規記錄' type='view' target='VFViolation' />
+<outlineentry title='   🔥 待處理' type='view' target='VFViolation_Pending' />
+<outlineentry title='   ✔️ 已處理' type='view' target='VFViolation_Handled' />
+
+<!-- 群組:訪客登記管理 -->
+<outlineentry title='👥 訪客登記' type='view' target='VFVisitor' />
+<outlineentry title='   📅 今日來訪' type='view' target='VFVisitor_Today' />
+<outlineentry title='   ⏰ 待核准' type='view' target='VFVisitor_Pending' />
+
+</outline>

@@ -1,0 +1,76 @@
+<?xml version='1.0' encoding='utf-8'?>
+<view name='訪客登記_待核准' alias='VFVisitor_Pending' xmlns='http://www.lotus.com/dxl'
+ version='12.0' maintenanceversion='2.2' replicaid='48258DF7002468B3' showinmenu='false'
+ noreplace='true' publicaccess='false' designerversion='8.5.3' unreadmarks='none'
+ onopengoto='lastopened' onrefresh='displayindicator' headers='simple' opencollapsed='false'
+ showresponsehierarchy='true' showmargin='true' shrinkrows='false' extendlastcolumn='false'
+ showhierarchies='false' unreadcolor='black' rowlinecount='1' headerlinecount='1'
+ rowspacing='1' bgcolor='white' altrowcolor='#fef9c3' totalscolor='#a16207'
+ headerbgcolor='#a16207' boldunreadrows='false' evaluateactions='false' allownewdocuments='false'
+ allowcustomizations='true' hidemarginborder='false' marginwidth='0px' marginbgcolor='white'
+ uniquekeys='false'>
+<noteinfo noteid='20e' unid='067464BE3B0AD8DF48258E0C0027D1EA' sequence='25'>
+<created><datetime>20260604T151456,42+08</datetime></created>
+<modified><datetime>20260604T153436,13+08</datetime></modified>
+<revised><datetime>20260604T153436,12+08</datetime></revised>
+<lastaccessed><datetime>20260604T153436,12+08</datetime></lastaccessed>
+<addedtofile><datetime>20260604T151456,47+08</datetime></addedtofile></noteinfo>
+<updatedby><name>CN=B11109006/O=XRedSchool</name></updatedby>
+<wassignedby><name>CN=B11109006/O=XRedSchool</name></wassignedby><code event='selection'><formula
+>SELECT Form = "FVisitor" &amp; visitStatus = "待核准"</formula></code>
+<actionbar bgcolor='#ca8a04' bordercolor='#a16207'>
+<actionbuttonstyle bgcolor='#ca8a04'/><font size='9pt' color='white'/><border
+ style='solid' width='0px 0px 1px' color='system'/>
+<action title='核准' icon='98'><code event='click'><formula>@Command([EditDocument]); @SetField("visitStatus"; "已核准")</formula></code></action>
+<action title='拒絕' icon='127'><code event='click'><formula>@Command([EditDocument]); @SetField("visitStatus"; "拒絕")</formula></code></action>
+<action title='檢視詳情' icon='91'><code event='click'><formula>@Command([EditDocument])</formula></code></action>
+<action title='取消' icon='95'><code event='click'><formula>@Command([EditDocument]); @SetField("visitStatus"; "已取消")</formula></code></action></actionbar>
+<column sort='ascending' hidedetailrows='false' itemname='createdAt' width='14'
+ resizable='true' separatemultiplevalues='false' sortnoaccent='false' sortnocase='false'
+ showaslinks='false'><columnheader title='登記時間'><font size='9pt' color='white'
+ style='bold'/></columnheader></column>
+<column sort='ascending' hidedetailrows='false' itemname='visitDate' width='12'
+ resizable='true' separatemultiplevalues='false' sortnoaccent='false' sortnocase='false'
+ showaslinks='false'><columnheader title='來訪日期'><font size='9pt' color='white'
+ style='bold'/></columnheader></column>
+<column hidedetailrows='false' itemname='visitorName' width='10' resizable='true'
+ separatemultiplevalues='false' sortnoaccent='true' sortnocase='true' showaslinks='false'><columnheader
+ title='訪客姓名'><font size='9pt' color='white' style='bold'/></columnheader></column>
+<column hidedetailrows='false' itemname='visitorGender' width='6' resizable='true'
+ separatemultiplevalues='false' sortnoaccent='true' sortnocase='true' showaslinks='false'><columnheader
+ title='性別'><font size='9pt' color='white' style='bold'/></columnheader></column>
+<column hidedetailrows='false' itemname='visitorPhone' width='10' resizable='true'
+ separatemultiplevalues='false' sortnoaccent='true' sortnocase='true' showaslinks='false'><columnheader
+ title='訪客電話'><font size='9pt' color='white' style='bold'/></columnheader></column>
+<column hidedetailrows='false' itemname='idType' width='8' resizable='true'
+ separatemultiplevalues='false' sortnoaccent='true' sortnocase='true' showaslinks='false'><columnheader
+ title='證件類型'><font size='9pt' color='white' style='bold'/></columnheader></column>
+<column hidedetailrows='false' itemname='idNumber' width='12' resizable='true'
+ separatemultiplevalues='false' sortnoaccent='true' sortnocase='true' showaslinks='false'><columnheader
+ title='證件號碼'><font size='9pt' color='white' style='bold'/></columnheader></column>
+<column sort='ascending' hidedetailrows='false' itemname='studentId' width='10'
+ resizable='true' separatemultiplevalues='false' sortnoaccent='true' sortnocase='true'
+ showaslinks='false'><columnheader title='被訪學號'><font size='9pt' color='white'
+ style='bold'/></columnheader></column>
+<column hidedetailrows='false' itemname='studentName' width='10' resizable='true'
+ separatemultiplevalues='false' sortnoaccent='true' sortnocase='true' showaslinks='false'><columnheader
+ title='被訪姓名'><font size='9pt' color='white' style='bold'/></columnheader></column>
+<column hidedetailrows='false' itemname='studentPhone' width='10' resizable='true'
+ separatemultiplevalues='false' sortnoaccent='false' sortnocase='true' showaslinks='false'><columnheader
+ title='被訪電話'><font size='9pt' color='white' style='bold'/></columnheader></column>
+<column hidedetailrows='false' itemname='buildingName' width='8' resizable='true'
+ separatemultiplevalues='false' sortnoaccent='true' sortnocase='true' showaslinks='false'><columnheader
+ title='棟別'><font size='9pt' color='white' style='bold'/></columnheader></column>
+<column hidedetailrows='false' itemname='roomNumber' width='8' resizable='true'
+ separatemultiplevalues='false' sortnoaccent='true' sortnocase='true' showaslinks='false'><columnheader
+ title='房號'><font size='9pt' color='white' style='bold'/></columnheader></column>
+<column hidedetailrows='false' itemname='visitLocation' width='8' resizable='true'
+ separatemultiplevalues='false' sortnoaccent='true' sortnocase='true' showaslinks='false'><columnheader
+ title='來訪地點'><font size='9pt' color='white' style='bold'/></columnheader></column>
+<column hidedetailrows='false' itemname='isOvernight' width='6' resizable='true'
+ separatemultiplevalues='false' sortnoaccent='true' sortnocase='true' showaslinks='false'><columnheader
+ title='過夜'><font size='9pt' color='white' style='bold'/></columnheader></column>
+<column hidedetailrows='false' itemname='visitReason' width='14' resizable='true'
+ separatemultiplevalues='false' sortnoaccent='true' sortnocase='true' showaslinks='false'><columnheader
+ title='來訪原因'><font size='9pt' color='white' style='bold'/></columnheader></column></view>
+

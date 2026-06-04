@@ -1,0 +1,225 @@
+# Cross-file dependency map for dms3 On-Disk Project
+# This is the bridge AI must maintain when generating or modifying dms3 design elements.
+# Generated: 2026-06-04
+# Source: Domino DXL Template Kit v2 + dms3 專案客製化
+
+project:
+  name: dms3
+  type: dormitory-management
+  database: dms3.nsf
+  replicaid: 48258DF7002468B3
+
+# === Forms (4 active + 1 legacy) ===
+forms:
+  FRoom:
+    name: 房間資料表
+    file: Forms/房間資料表.form
+    primary_fields:
+      - building_id
+      - floor
+      - room_number
+      - room_type
+    used_by_views:
+      - VRoom
+    used_by_agents: []
+  DormApp:
+    name: 宿舍申請表
+    file: Forms/宿舍申請表.form
+    primary_fields:
+      - studentId
+      - studentName
+      - applyStatus
+      - academicYear
+      - semester
+    used_by_views:
+      - VDormApp
+      - VDormApp_Pending
+      - VDormApp_Approved
+    used_by_agents:
+      - AAReviewerNotifier
+  FViolation:
+    name: 違規紀錄表
+    file: Forms/違規紀錄表.form
+    primary_fields:
+      - studentId
+      - studentName
+      - violationDate
+      - violationType
+      - violationLevel
+      - penaltyPoint
+      - processStatus
+    used_by_views:
+      - VFViolation
+      - VFViolation_Pending
+      - VFViolation_Handled
+    used_by_agents:
+      - AAViolationPointAggregator
+  FVisitor:
+    name: 訪客登記表
+    file: Forms/訪客登記表.form
+    primary_fields:
+      - visitorName
+      - studentId
+      - visitDate
+      - visitStatus
+    used_by_views:
+      - VFVisitor
+      - VFVisitor_Today
+      - VFVisitor_Pending
+    used_by_agents: []
+
+# === Views (10 active) ===
+views:
+  VRoom:
+    name: 房間資料表
+    file: Views/VRoom.view
+    selection_formula: 'SELECT Form = "FRoom"'
+    columns:
+      - room_number
+      - room_name
+      - building_id
+      - floor
+      - room_type
+      - capacity
+      - available_beds
+      - monthly_fee
+      - status
+      - updated_at
+  VDormApp:
+    name: VDormApp_All 宿舍申請總覽
+    file: Views/VDormApp.view
+    selection_formula: 'SELECT Form = "DormApp"'
+  VDormApp_Pending:
+    name: VDormApp_Pending 宿舍申請_待審核
+    file: Views/VDormApp_Pending.view
+    selection_formula: 'SELECT Form = "DormApp" & (applyStatus = "草稿" | applyStatus = "已送出" | applyStatus = "審核中")'
+  VDormApp_Approved:
+    name: VDormApp_Approved 宿舍申請_已核准
+    file: Views/VDormApp_Approved.view
+    selection_formula: 'SELECT Form = "DormApp" & applyStatus = "已核准"'
+  VFViolation:
+    name: VFViolation_All 違規記錄總覽
+    file: Views/VFViolation.view
+    selection_formula: 'SELECT Form = "FViolation"'
+  VFViolation_Pending:
+    name: VFViolation_Pending 違規記錄_待處理
+    file: Views/VFViolation_Pending.view
+    selection_formula: 'SELECT Form = "FViolation" & (processStatus = "待處理" | processStatus = "處理中" | processStatus = "申訴中")'
+  VFViolation_Handled:
+    name: VFViolation_Handled 違規記錄_已處理
+    file: Views/VFViolation_Handled.view
+    selection_formula: 'SELECT Form = "FViolation" & processStatus = "已完成"'
+  VFVisitor:
+    name: VFVisitor_All 訪客登記總覽
+    file: Views/VFVisitor.view
+    selection_formula: 'SELECT Form = "FVisitor"'
+  VFVisitor_Today:
+    name: VFVisitor_Today 訪客登記_今日來訪
+    file: Views/VFVisitor_Today.view
+    selection_formula: 'SELECT Form = "FVisitor" & visitDate = @Today'
+  VFVisitor_Pending:
+    name: VFVisitor_Pending 訪客登記_待核准
+    file: Views/VFVisitor_Pending.view
+    selection_formula: 'SELECT Form = "FVisitor" & visitStatus = "待核准"'
+
+# === Framesets ===
+framesets:
+  MainFrame:
+    name: MainFrame
+    file: Framesets/MainFrame.frameset
+    layout: '200px,*'  # 200px 左側導覽 + 剩餘右側內容
+    left_frame:
+      name: Navigation
+      target_type: outline
+      target: ClientOutLine
+    right_frame:
+      name: Content
+      target_type: view
+      target: VDormApp  # 預設載入申請總覽
+
+# === Outlines (Navigation) ===
+outlines:
+  ClientOutLine:
+    name: ClientOutLine
+    file: SharedElements/Outlines/ClientOutLine.outline
+    structure:
+      - 房間資料: VRoom
+      - 宿舍申請: VDormApp
+      - 待審核: VDormApp_Pending
+      - 已核准: VDormApp_Approved
+      - 違規記錄: VFViolation
+      - 待處理: VFViolation_Pending
+      - 已處理: VFViolation_Handled
+      - 訪客登記: VFVisitor
+      - 今日來訪: VFVisitor_Today
+      - 待核准: VFVisitor_Pending
+
+# === Agents ===
+agents:
+  AAReviewerNotifier:
+    name: AAReviewerNotifier 新申請通知審核人
+    file: Code/Agents/AAReviewerNotifier.lsa
+    trigger: after document submit
+    target_form: DormApp
+    reads:
+      - studentId
+      - studentName
+      - applyStatus
+      - academicYear
+      - semester
+      - applyDate
+      - stayPeriod
+      - applicationReasonType
+    writes:
+      - NotifyStatus
+      - NotifyDate
+    notify_recipient: DormAdmin@XRedSchool
+  AAViolationPointAggregator:
+    name: AAViolationPointAggregator 違規記點自動彙整
+    file: Code/Agents/AAViolationPointAggregator.lsa
+    trigger: scheduled (monthly)
+    target_form: FViolation
+    reads:
+      - studentId
+      - studentName
+      - violationDate
+      - violationType
+      - processStatus
+      - penaltyPoint
+    writes: []
+    notify_recipient: DormAdmin@XRedSchool
+    notes: |
+      月報內容包含:
+      - 本月違規總件數
+      - 本月已處理 / 未處理件數
+      - 目前累計待處理件數
+      - 本月各違規類型統計
+
+# === Cross-File Consistency Rules ===
+# 當新增任何 Form 欄位時,必須同步檢查:
+#   1. Form 是否有 <field> 對應
+#   2. 引用此 Form 的 View column itemname 是否存在
+#   3. 引用此 Form 的 Agent reads/writes 欄位是否在 Form 內
+#   4. 本 dependency-map.yaml 是否更新
+
+# === Status State Machines ===
+state_machines:
+  DormApp.applyStatus:
+    - 草稿
+    - 已送出
+    - 審核中
+    - 已核准
+    - 已退回
+    - 取消
+  FViolation.processStatus:
+    - 待處理
+    - 處理中
+    - 已完成
+    - 申訴中
+    - 已撤銷
+  FVisitor.visitStatus:
+    - 待核准
+    - 已核准
+    - 拒絕
+    - 已離開
+    - 已取消

@@ -1,0 +1,61 @@
+<?xml version='1.0' encoding='utf-8'?>
+<view name='宿舍申請_已核准' alias='VDormApp_Approved' xmlns='http://www.lotus.com/dxl'
+ version='12.0' maintenanceversion='2.2' replicaid='48258DF7002468B3' showinmenu='false'
+ noreplace='true' publicaccess='false' designerversion='8.5.3' unreadmarks='none'
+ onopengoto='lastopened' onrefresh='displayindicator' headers='simple' opencollapsed='false'
+ showresponsehierarchy='true' showmargin='true' shrinkrows='false' extendlastcolumn='false'
+ showhierarchies='false' unreadcolor='black' rowlinecount='1' headerlinecount='1'
+ rowspacing='1' bgcolor='white' altrowcolor='#dcfce7' totalscolor='#15803d'
+ headerbgcolor='#15803d' boldunreadrows='false' evaluateactions='false' allownewdocuments='false'
+ allowcustomizations='true' hidemarginborder='false' marginwidth='0px' marginbgcolor='white'
+ uniquekeys='false'>
+<noteinfo noteid='1de' unid='B62BDAD4C5B2DDC748258E0C002603E8' sequence='21'>
+<created><datetime>20260604T145513,68+08</datetime></created>
+<modified><datetime>20260604T152530,51+08</datetime></modified>
+<revised><datetime>20260604T152530,50+08</datetime></revised>
+<lastaccessed><datetime>20260604T152530,50+08</datetime></lastaccessed>
+<addedtofile><datetime>20260604T145513,74+08</datetime></addedtofile></noteinfo>
+<updatedby><name>CN=B11109006/O=XRedSchool</name></updatedby>
+<wassignedby><name>CN=B11109006/O=XRedSchool</name></wassignedby><code event='selection'><formula
+>SELECT Form = "DormApp" &amp; applyStatus = "已核准"</formula></code>
+<actionbar bgcolor='#16a34a' bordercolor='#15803d'>
+<actionbuttonstyle bgcolor='#16a34a'/><font size='9pt' color='white'/><border
+ style='solid' width='0px 0px 1px' color='system'/>
+<action title='檢視' icon='91'><code event='click'><formula>@Command([EditDocument])</formula></code></action>
+<action title='分配房間' icon='47'><code event='click'><formula>@Command([EditDocument])</formula></code></action></actionbar>
+<column sort='ascending' hidedetailrows='false' itemname='assignedRoom' width='10'
+ resizable='true' separatemultiplevalues='false' sortnoaccent='true' sortnocase='true'
+ showaslinks='false'><columnheader title='分配房號'><font size='9pt' color='white'
+ style='bold'/></columnheader></column>
+<column sort='ascending' hidedetailrows='false' itemname='studentId' width='10'
+ resizable='true' separatemultiplevalues='false' sortnoaccent='true' sortnocase='true'
+ showaslinks='false'><columnheader title='學號'><font size='9pt' color='white'
+ style='bold'/></columnheader></column>
+<column hidedetailrows='false' itemname='studentName' width='10' resizable='true'
+ separatemultiplevalues='false' sortnoaccent='true' sortnocase='true' showaslinks='false'><columnheader
+ title='姓名'><font size='9pt' color='white' style='bold'/></columnheader></column>
+<column hidedetailrows='false' itemname='gender' width='6' resizable='true'
+ separatemultiplevalues='false' sortnoaccent='true' sortnocase='true' showaslinks='false'><columnheader
+ title='性別'><font size='9pt' color='white' style='bold'/></columnheader></column>
+<column hidedetailrows='false' itemname='departmentClass' width='12' resizable='true'
+ separatemultiplevalues='false' sortnoaccent='true' sortnocase='true' showaslinks='false'><columnheader
+ title='系級'><font size='9pt' color='white' style='bold'/></columnheader></column>
+<column hidedetailrows='false' itemname='academicYear' width='8' resizable='true'
+ separatemultiplevalues='false' sortnoaccent='true' sortnocase='true' showaslinks='false'><columnheader
+ title='學年'><font size='9pt' color='white' style='bold'/></columnheader></column>
+<column hidedetailrows='false' itemname='semester' width='8' resizable='true'
+ separatemultiplevalues='false' sortnoaccent='true' sortnocase='true' showaslinks='false'><columnheader
+ title='學期'><font size='9pt' color='white' style='bold'/></columnheader></column>
+<column hidedetailrows='false' itemname='stayPeriod' width='8' resizable='true'
+ separatemultiplevalues='false' sortnoaccent='true' sortnocase='true' showaslinks='false'><columnheader
+ title='住宿期間'><font size='9pt' color='white' style='bold'/></columnheader></column>
+<column hidedetailrows='false' itemname='assignedBed' width='10' resizable='true'
+ separatemultiplevalues='false' sortnoaccent='true' sortnocase='true' showaslinks='false'><columnheader
+ title='分配床位'><font size='9pt' color='white' style='bold'/></columnheader></column>
+<column hidedetailrows='false' itemname='reviewer' width='10' resizable='true'
+ separatemultiplevalues='false' sortnoaccent='false' sortnocase='true' showaslinks='false'><columnheader
+ title='審核人'><font size='9pt' color='white' style='bold'/></columnheader></column>
+<column hidedetailrows='false' itemname='reviewDate' width='12' resizable='true'
+ separatemultiplevalues='false' sortnoaccent='false' sortnocase='false' showaslinks='false'><columnheader
+ title='審核日期'><font size='9pt' color='white' style='bold'/></columnheader></column></view>
+

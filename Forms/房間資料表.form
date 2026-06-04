@@ -1,0 +1,338 @@
+<?xml version='1.0' encoding='utf-8'?>
+<form name='房間資料表' alias='FRoom' xmlns='http://www.lotus.com/dxl' version='12.0'
+ maintenanceversion='2.2' replicaid='48258DF7002468B3' publicaccess='false'
+ designerversion='8.5.3'>
+<noteinfo noteid='1a2' unid='7966C2D62596796148258E0C00157B55' sequence='13'>
+<created><datetime>20260604T115438,29+08</datetime></created>
+<modified><datetime>20260604T124653,15+08</datetime></modified>
+<revised><datetime>20260604T124653,14+08</datetime></revised>
+<lastaccessed><datetime>20260604T124653,14+08</datetime></lastaccessed>
+<addedtofile><datetime>20260604T115439,22+08</datetime></addedtofile></noteinfo>
+<updatedby><name>CN=B11109006/O=XRedSchool</name></updatedby>
+<wassignedby><name>CN=B11109006/O=XRedSchool</name></wassignedby>
+<actionbar bgcolor='#2563eb' bordercolor='#1d4ed8'>
+<actionbuttonstyle bgcolor='#2563eb'/><font size='9pt' color='white'/><border
+ style='solid' width='0px 0px 1px' color='system'/>
+<action title='儲存' icon='5'><code event='click'><formula>
+@Command([FileSave]);
+@Command([FileCloseWindow])</formula></code></action>
+<action title='取消' icon='127'><code event='click'><formula>
+@Command([FileCloseWindow])</formula></code></action></actionbar>
+<body><richtext>
+<pardef id='1' align='center'/>
+<par def='1'/>
+<table rowdisplay='tabs' leftmargin='0' widthtype='fixedcenter' refwidth='7.7208in'><tablecolumn
+ width='7.7208in'/>
+<tablerow>
+<tablecell bgcolor='#f8fafc'>
+<pardef id='3' align='center' spacebefore='2'/>
+<par def='3'/>
+<table cellbordercolor='#f8fafc' leftmargin='0.0104in' widthtype='fixedcenter'
+ refwidth='6.9000in'><tablecolumn width='6.9000in'/>
+<tablerow>
+<tablecell valign='center' bgcolor='#eff6ff'>
+<pardef id='5' align='center' spacebefore='2' keepwithnext='true' keeptogether='true'/>
+<par def='5'><run><font size='26pt' style='bold' name='Microsoft JhengHei'
+ pitch='variable' truetype='true' familyid='20' color='#1d4ed8'/>【房間資料表】</run></par>
+<pardef id='6' align='center' spaceafter='2' keepwithnext='true' keeptogether='true'/>
+<par def='6'><run><font name='Microsoft JhengHei' pitch='variable' truetype='true'
+ familyid='20' color='#64748b'/>Room Information Form</run></par></tablecell></tablerow></table>
+<pardef id='7' align='center'/>
+<par def='7'/>
+<table cellbordercolor='#dbeafe' leftmargin='0.0104in' widthtype='fixedcenter'
+ refwidth='6.9000in'><border style='solid' width='1px' color='silver'/><tablecolumn
+ width='6.9000in'/>
+<tablerow>
+<tablecell valign='center' bgcolor='#2563eb'>
+<pardef id='8' leftmargin='0.1500in' keepwithnext='true' keeptogether='true'/>
+<par def='8'><run><font size='13pt' style='bold' name='Microsoft JhengHei'
+ pitch='variable' truetype='true' familyid='20' color='white'/>一、基本資料</run></par></tablecell></tablerow></table>
+<pardef id='9' leftmargin='0.1500in' keepwithnext='true' keeptogether='true'/>
+<par def='9'/>
+<table cellbordercolor='#cbd5e1' leftmargin='0.0104in' widthtype='fixedcenter'
+ refwidth='6.9000in'><border style='solid' width='1px' color='silver'/><tablecolumn
+ width='1.2500in'/><tablecolumn width='2.2000in'/><tablecolumn width='1.2500in'/><tablecolumn
+ width='2.2000in'/>
+<tablerow>
+<tablecell valign='center' bgcolor='#f1f5f9'>
+<pardef id='10' leftmargin='0.1201in' spacebefore='1.5' spaceafter='1.5' keepwithnext='true'
+ keeptogether='true'/>
+<par def='10'><run><font size='11pt' style='bold' name='Microsoft JhengHei'
+ pitch='variable' truetype='true' familyid='20' color='#334155'/>所屬棟別 ID</run><run
+><font size='11pt' style='bold' name='Microsoft JhengHei' pitch='variable'
+ truetype='true' familyid='20' color='#dc2626'/>*</run></par></tablecell>
+<tablecell valign='center' bgcolor='white'>
+<pardef id='11' leftmargin='0.1201in' spacebefore='1.5' spaceafter='1.5' keepwithnext='true'
+ keeptogether='true'/>
+<par def='11'><run><font size='11pt' name='Microsoft JhengHei' pitch='variable'
+ truetype='true' familyid='20' color='#0f172a'/></run><run><font size='11pt'
+ color='#00201f' name='Microsoft JhengHei' pitch='variable' truetype='true'
+ familyid='20'/><field type='number' kind='editable' name='building_id'><numberformat
+ format='general' punctuated='false' parens='false' percent='false' bytes='false'/></field></run></par></tablecell>
+<tablecell valign='center' bgcolor='#f1f5f9'>
+<pardef id='12' leftmargin='0.1201in' spacebefore='1.5' spaceafter='1.5' keepwithnext='true'
+ keeptogether='true'/>
+<par def='12'><run><font size='11pt' style='bold' name='Microsoft JhengHei'
+ pitch='variable' truetype='true' familyid='20' color='#334155'/>樓層</run><run
+><font size='11pt' style='bold' name='Microsoft JhengHei' pitch='variable'
+ truetype='true' familyid='20' color='#dc2626'/>*</run></par></tablecell>
+<tablecell valign='center' bgcolor='white'>
+<pardef id='13' leftmargin='0.1201in' spacebefore='1.5' spaceafter='1.5' keepwithnext='true'
+ keeptogether='true'/>
+<par def='13'><run><font size='11pt' name='Microsoft JhengHei' pitch='variable'
+ truetype='true' familyid='20' color='#0f172a'/></run><run><font size='11pt'
+ color='#00201f' name='Microsoft JhengHei' pitch='variable' truetype='true'
+ familyid='20'/><field type='number' kind='editable' name='floor'><numberformat
+ format='general' punctuated='false' parens='false' percent='false' bytes='false'/></field></run></par></tablecell></tablerow>
+<tablerow>
+<tablecell valign='center' bgcolor='#f8fafc'>
+<par def='10'><run><font size='11pt' style='bold' name='Microsoft JhengHei'
+ pitch='variable' truetype='true' familyid='20' color='#334155'/>房號</run><run
+><font size='11pt' style='bold' name='Microsoft JhengHei' pitch='variable'
+ truetype='true' familyid='20' color='#dc2626'/>*</run></par></tablecell>
+<tablecell valign='center' bgcolor='white'>
+<par def='11'><run><font size='11pt' color='#00201f' name='Microsoft JhengHei'
+ pitch='variable' truetype='true' familyid='20'/><field type='text' kind='editable'
+ name='room_number'/></run><compositedata type='98' prevtype='65418' nexttype='222'
+ afterparcount='6' containertype='65418' aftercontainercount='1' afterbegincount='3'>
+Yg4BAIQAAAAAAAAAAAA=
+</compositedata></par></tablecell>
+<tablecell valign='center' bgcolor='#f8fafc'>
+<par def='12'><run><font size='11pt' style='bold' name='Microsoft JhengHei'
+ pitch='variable' truetype='true' familyid='20' color='#334155'/>房間名稱</run></par></tablecell>
+<tablecell valign='center' bgcolor='white'>
+<par def='13'><run><font size='11pt' color='#00201f' name='Microsoft JhengHei'
+ pitch='variable' truetype='true' familyid='20'/><field type='text' kind='editable'
+ name='room_name'/></run><compositedata type='98' prevtype='65418' nexttype='222'
+ afterparcount='6' containertype='65418' aftercontainercount='1' afterbegincount='3'>
+Yg4BAIQAAAAAAAAAAAA=
+</compositedata></par></tablecell></tablerow>
+<tablerow>
+<tablecell valign='center' bgcolor='#f1f5f9'>
+<par def='10'><run><font size='11pt' style='bold' name='Microsoft JhengHei'
+ pitch='variable' truetype='true' familyid='20' color='#334155'/>房型</run><run
+><font size='11pt' style='bold' name='Microsoft JhengHei' pitch='variable'
+ truetype='true' familyid='20' color='#dc2626'/>*</run></par></tablecell>
+<tablecell columnspan='3' bgcolor='white'>
+<pardef id='15' leftmargin='0.1201in' rightmargin='100%' spacebefore='1.5'
+ spaceafter='1.5' keepwithnext='true' keeptogether='true'/>
+<par def='15'><run><font size='11pt' name='Microsoft JhengHei' pitch='variable'
+ truetype='true' familyid='20'/><field borderstyle='inset' lookupeachchar='false'
+ lookupaddressonrefresh='false' type='keyword' kind='editable' name='room_type'><keywords
+ columns='1'><textlist><text>單人房</text><text>雙人房</text><text
+>三人房</text><text>四人房</text><text>家庭房</text><text>無障礙房</text></textlist></keywords></field></run><run
+><font size='11pt' name='Microsoft JhengHei' pitch='variable' truetype='true'
+ familyid='20'/></run></par></tablecell></tablerow></table>
+<par def='9'/>
+<table cellbordercolor='#dbeafe' leftmargin='0.0104in' widthtype='fixedcenter'
+ refwidth='6.9000in'><border style='solid' width='1px' color='silver'/><tablecolumn
+ width='6.9000in'/>
+<tablerow>
+<tablecell valign='center' bgcolor='#2563eb'>
+<par def='8'><run><font size='13pt' style='bold' name='Microsoft JhengHei'
+ pitch='variable' truetype='true' familyid='20' color='white'/>二、住宿條件</run></par></tablecell></tablerow></table>
+<par def='9'/>
+<table cellbordercolor='#cbd5e1' leftmargin='0.0104in' widthtype='fixedcenter'
+ refwidth='6.9000in'><border style='solid' width='1px' color='silver'/><tablecolumn
+ width='1.2500in'/><tablecolumn width='2.2000in'/><tablecolumn width='1.2500in'/><tablecolumn
+ width='2.2000in'/>
+<tablerow>
+<tablecell valign='center' bgcolor='#f1f5f9'>
+<par def='10'><run><font size='11pt' style='bold' name='Microsoft JhengHei'
+ pitch='variable' truetype='true' familyid='20' color='#334155'/>性別限制</run></par></tablecell>
+<tablecell valign='center' bgcolor='white'>
+<par def='11'><run><font size='11pt' color='#00201f' name='Microsoft JhengHei'
+ pitch='variable' truetype='true' familyid='20'/><field borderstyle='inset'
+ lookupeachchar='false' lookupaddressonrefresh='false' type='keyword' kind='editable'
+ name='gender_limit'><keywords columns='1'><textlist><text>男</text><text
+>女</text><text>不限</text></textlist></keywords></field></run></par></tablecell>
+<tablecell valign='center' bgcolor='#f1f5f9'>
+<par def='12'><run><font size='11pt' style='bold' name='Microsoft JhengHei'
+ pitch='variable' truetype='true' familyid='20' color='#334155'/>可入住人數</run><run
+><font size='11pt' style='bold' name='Microsoft JhengHei' pitch='variable'
+ truetype='true' familyid='20' color='#dc2626'/>*</run></par></tablecell>
+<tablecell valign='center' bgcolor='white'>
+<par def='13'><run><font size='11pt' color='#00201f' name='Microsoft JhengHei'
+ pitch='variable' truetype='true' familyid='20'/><field type='number' kind='editable'
+ name='capacity'><numberformat format='general' punctuated='false' parens='false'
+ percent='false' bytes='false'/></field></run></par></tablecell></tablerow>
+<tablerow>
+<tablecell valign='center' bgcolor='#f8fafc'>
+<par def='10'><run><font size='11pt' style='bold' name='Microsoft JhengHei'
+ pitch='variable' truetype='true' familyid='20' color='#334155'/>目前入住人數</run></par></tablecell>
+<tablecell valign='center' bgcolor='white'>
+<par def='11'><run><font size='11pt' color='#00201f' name='Microsoft JhengHei'
+ pitch='variable' truetype='true' familyid='20'/><field type='number' kind='editable'
+ name='current_occupancy'><numberformat format='general' punctuated='false'
+ parens='false' percent='false' bytes='false'/></field></run></par></tablecell>
+<tablecell valign='center' bgcolor='#f8fafc'>
+<par def='12'><run><font size='11pt' style='bold' name='Microsoft JhengHei'
+ pitch='variable' truetype='true' familyid='20' color='#334155'/>剩餘床位數</run></par></tablecell>
+<tablecell valign='center' bgcolor='white'>
+<par def='13'><run><font size='11pt' color='#00201f' name='Microsoft JhengHei'
+ pitch='variable' truetype='true' familyid='20'/><field type='number' kind='editable'
+ name='available_beds'><numberformat format='general' punctuated='false' parens='false'
+ percent='false' bytes='false'/></field></run></par></tablecell></tablerow>
+<tablerow>
+<tablecell valign='center' bgcolor='#f1f5f9'>
+<par def='10'><run><font size='11pt' style='bold' name='Microsoft JhengHei'
+ pitch='variable' truetype='true' familyid='20' color='#334155'/>每月住宿費</run></par></tablecell>
+<tablecell valign='center' bgcolor='white'>
+<par def='11'><run><font size='11pt' color='#00201f' name='Microsoft JhengHei'
+ pitch='variable' truetype='true' familyid='20'/><field type='number' kind='editable'
+ name='monthly_fee'><numberformat format='general' punctuated='false' parens='false'
+ percent='false' bytes='false'/></field></run></par></tablecell>
+<tablecell valign='center' bgcolor='#f1f5f9'>
+<par def='12'><run><font size='11pt' style='bold' name='Microsoft JhengHei'
+ pitch='variable' truetype='true' familyid='20' color='#334155'/>每學期住宿費</run></par></tablecell>
+<tablecell valign='center' bgcolor='white'>
+<par def='13'><run><font size='11pt' color='#00201f' name='Microsoft JhengHei'
+ pitch='variable' truetype='true' familyid='20'/><field type='number' kind='editable'
+ name='semester_fee'><numberformat format='general' punctuated='false' parens='false'
+ percent='false' bytes='false'/></field></run></par></tablecell></tablerow>
+<tablerow>
+<tablecell valign='center' bgcolor='#f8fafc'>
+<par def='10'><run><font size='11pt' style='bold' name='Microsoft JhengHei'
+ pitch='variable' truetype='true' familyid='20' color='#334155'/>房間坪數</run></par></tablecell>
+<tablecell columnspan='3' bgcolor='white'>
+<par def='15'><run><font size='11pt' name='Microsoft JhengHei' pitch='variable'
+ truetype='true' familyid='20'/><field type='number' kind='editable' name='area'><numberformat
+ format='general' punctuated='false' parens='false' percent='false' bytes='false'/></field></run><run
+><font size='11pt' name='Microsoft JhengHei' pitch='variable' truetype='true'
+ familyid='20'/></run></par></tablecell></tablerow></table>
+<par def='9'/>
+<table cellbordercolor='#dbeafe' leftmargin='0.0104in' widthtype='fixedcenter'
+ refwidth='6.9000in'><border style='solid' width='1px' color='silver'/><tablecolumn
+ width='6.9000in'/>
+<tablerow>
+<tablecell valign='center' bgcolor='#2563eb'>
+<par def='8'><run><font size='13pt' style='bold' name='Microsoft JhengHei'
+ pitch='variable' truetype='true' familyid='20' color='white'/>三、設備與設施</run></par></tablecell></tablerow></table>
+<par def='9'/>
+<table cellbordercolor='#cbd5e1' leftmargin='0.0104in' widthtype='fixedcenter'
+ refwidth='6.9000in'><border style='solid' width='1px' color='silver'/><tablecolumn
+ width='1.2500in'/><tablecolumn width='2.2000in'/><tablecolumn width='1.2500in'/><tablecolumn
+ width='2.2000in'/>
+<tablerow>
+<tablecell valign='center' bgcolor='#f1f5f9'>
+<par def='10'><run><font size='11pt' style='bold' name='Microsoft JhengHei'
+ pitch='variable' truetype='true' familyid='20' color='#334155'/>獨立衛浴</run></par></tablecell>
+<tablecell valign='center' bgcolor='white'>
+<par def='11'><run><font size='11pt' color='#00201f' name='Microsoft JhengHei'
+ pitch='variable' truetype='true' familyid='20'/><field borderstyle='inset'
+ lookupeachchar='false' lookupaddressonrefresh='false' type='keyword' kind='editable'
+ name='has_bathroom'><keywords columns='1'><textlist><text>是</text><text
+>否</text></textlist></keywords></field></run></par></tablecell>
+<tablecell valign='center' bgcolor='#f1f5f9'>
+<par def='12'><run><font size='11pt' style='bold' name='Microsoft JhengHei'
+ pitch='variable' truetype='true' familyid='20' color='#334155'/>冷氣</run></par></tablecell>
+<tablecell valign='center' bgcolor='white'>
+<par def='13'><run><font size='11pt' color='#00201f' name='Microsoft JhengHei'
+ pitch='variable' truetype='true' familyid='20'/><field borderstyle='inset'
+ lookupeachchar='false' lookupaddressonrefresh='false' type='keyword' kind='editable'
+ name='has_air_conditioner'><keywords columns='1'><textlist
+><text>是</text><text>否</text></textlist></keywords></field></run></par></tablecell></tablerow>
+<tablerow>
+<tablecell valign='center' bgcolor='#f8fafc'>
+<par def='10'><run><font size='11pt' style='bold' name='Microsoft JhengHei'
+ pitch='variable' truetype='true' familyid='20' color='#334155'/>陽台</run></par></tablecell>
+<tablecell valign='center' bgcolor='white'>
+<par def='11'><run><font size='11pt' color='#00201f' name='Microsoft JhengHei'
+ pitch='variable' truetype='true' familyid='20'/><field borderstyle='inset'
+ lookupeachchar='false' lookupaddressonrefresh='false' type='keyword' kind='editable'
+ name='has_balcony'><keywords columns='1'><textlist><text>是</text><text
+>否</text></textlist></keywords></field></run></par></tablecell>
+<tablecell valign='center' bgcolor='#f8fafc'>
+<par def='12'><run><font size='11pt' style='bold' name='Microsoft JhengHei'
+ pitch='variable' truetype='true' familyid='20' color='#334155'/>網路</run></par></tablecell>
+<tablecell valign='center' bgcolor='white'>
+<par def='13'><run><font size='11pt' color='#00201f' name='Microsoft JhengHei'
+ pitch='variable' truetype='true' familyid='20'/><field borderstyle='inset'
+ lookupeachchar='false' lookupaddressonrefresh='false' type='keyword' kind='editable'
+ name='has_network'><keywords columns='1'><textlist><text>是</text><text
+>否</text></textlist></keywords></field></run></par></tablecell></tablerow>
+<tablerow>
+<tablecell valign='center' bgcolor='#f1f5f9'>
+<par def='10'><run><font size='11pt' style='bold' name='Microsoft JhengHei'
+ pitch='variable' truetype='true' familyid='20' color='#334155'/>設備備註</run></par></tablecell>
+<tablecell columnspan='3' bgcolor='white'>
+<par def='15'><run><font size='11pt' name='Microsoft JhengHei' pitch='variable'
+ truetype='true' familyid='20'/><field type='text' kind='editable' name='equipment_note'/></run><compositedata
+ type='98' prevtype='65418' nexttype='222' afterparcount='6' containertype='65418'
+ aftercontainercount='1' afterbegincount='3'>
+Yg4BAIQAAAAAAAAAAAA=
+</compositedata><run><font size='11pt'
+ name='Microsoft JhengHei' pitch='variable' truetype='true' familyid='20'/></run></par></tablecell></tablerow></table>
+<par def='9'/>
+<table cellbordercolor='#dbeafe' leftmargin='0.0104in' widthtype='fixedcenter'
+ refwidth='6.9000in'><border style='solid' width='1px' color='silver'/><tablecolumn
+ width='6.9000in'/>
+<tablerow>
+<tablecell valign='center' bgcolor='#2563eb'>
+<par def='8'><run><font size='13pt' style='bold' name='Microsoft JhengHei'
+ pitch='variable' truetype='true' familyid='20' color='white'/>四、狀態與時間</run></par></tablecell></tablerow></table>
+<par def='9'/>
+<table cellbordercolor='#cbd5e1' leftmargin='0.0104in' widthtype='fixedcenter'
+ refwidth='6.9000in'><border style='solid' width='1px' color='silver'/><tablecolumn
+ width='1.2500in'/><tablecolumn width='2.2000in'/><tablecolumn width='1.2500in'/><tablecolumn
+ width='2.2000in'/>
+<tablerow>
+<tablecell valign='center' bgcolor='#f1f5f9'>
+<par def='10'><run><font size='11pt' style='bold' name='Microsoft JhengHei'
+ pitch='variable' truetype='true' familyid='20' color='#334155'/>房間狀態</run><run
+><font size='11pt' style='bold' name='Microsoft JhengHei' pitch='variable'
+ truetype='true' familyid='20' color='#dc2626'/>*</run></par></tablecell>
+<tablecell valign='center' bgcolor='white'>
+<par def='11'><run><font size='11pt' color='#00201f' name='Microsoft JhengHei'
+ pitch='variable' truetype='true' familyid='20'/><field borderstyle='inset'
+ lookupeachchar='false' lookupaddressonrefresh='false' type='keyword' kind='editable'
+ name='status'><keywords columns='1'><textlist><text>可入住</text><text
+>已滿</text><text>維修中</text><text>停用</text></textlist></keywords><code event='defaultvalue'><formula
+>"可入住"</formula></code></field></run></par></tablecell>
+<tablecell valign='center' bgcolor='#f1f5f9'>
+<par def='12'><run><font size='11pt' style='bold' name='Microsoft JhengHei'
+ pitch='variable' truetype='true' familyid='20' color='#334155'/>建立時間</run></par></tablecell>
+<tablecell valign='center' bgcolor='white'>
+<par def='13'><run><font size='11pt' color='#00201f' name='Microsoft JhengHei'
+ pitch='variable' truetype='true' familyid='20'/><field type='datetime' kind='computedwhencomposed'
+ name='created_at'><datetimeformat show='datetime' date='yearmonthday' fourdigityearfor21stcentury='true'
+ time='hourminute' zone='never' dateformat='yearmonthdayweekday' dayformat='twodigitday'
+ monthformat='twodigitmonth' yearformat='fourdigityear' weekdayformat='shortname'
+ dateseparator1='/' dateseparator2='/' dateseparator3=' ' timeseparator=':'
+ preference='usersetting'/><code event='defaultvalue'><formula>@Now</formula></code></field></run></par></tablecell></tablerow>
+<tablerow>
+<tablecell valign='center' bgcolor='#f8fafc'>
+<par def='10'><run><font size='11pt' style='bold' name='Microsoft JhengHei'
+ pitch='variable' truetype='true' familyid='20' color='#334155'/>更新時間</run></par></tablecell>
+<tablecell valign='center' bgcolor='white'>
+<par def='11'><run><font size='11pt' color='#00201f' name='Microsoft JhengHei'
+ pitch='variable' truetype='true' familyid='20'/><field type='datetime' kind='computed'
+ name='updated_at'><datetimeformat show='datetime' date='yearmonthday' fourdigityearfor21stcentury='true'
+ time='hourminute' zone='never' dateformat='yearmonthdayweekday' dayformat='twodigitday'
+ monthformat='twodigitmonth' yearformat='fourdigityear' weekdayformat='shortname'
+ dateseparator1='/' dateseparator2='/' dateseparator3=' ' timeseparator=':'
+ preference='usersetting'/><code event='defaultvalue'><formula>@Now</formula></code></field></run></par></tablecell>
+<tablecell valign='center' bgcolor='#f8fafc'>
+<par def='12'><run><font size='11pt' style='bold' name='Microsoft JhengHei'
+ pitch='variable' truetype='true' familyid='20' color='#334155'/>備註</run></par></tablecell>
+<tablecell valign='center' bgcolor='white'>
+<par def='13'><run><font size='11pt' color='#00201f' name='Microsoft JhengHei'
+ pitch='variable' truetype='true' familyid='20'/><field type='text' kind='editable'
+ name='remark'/></run><compositedata type='98' prevtype='65418' nexttype='222'
+ afterparcount='6' containertype='65418' aftercontainercount='1' afterbegincount='3'>
+Yg4BAIQAAAAAAAAAAAA=
+</compositedata></par></tablecell></tablerow></table>
+<pardef id='16' leftmargin='0.1500in' spacebefore='2' spaceafter='2'/>
+<par def='16'><run><font size='9pt' name='Microsoft JhengHei' pitch='variable'
+ truetype='true' familyid='20' color='#94a3b8'/>註:可入住人數、目前入住人數、剩餘床位數可由系統依床位資料與入住紀錄自動計算。</run></par></tablecell></tablerow></table>
+<par def='1'/></richtext></body>
+<item name='$$ScriptName' summary='false' sign='true'><text>FRoom</text></item>
+<item name='building_id' summary='false'><number>0</number></item>
+<item name='floor' summary='false'><number>0</number></item>
+<item name='capacity' summary='false'><number>0</number></item>
+<item name='current_occupancy' summary='false'><number>0</number></item>
+<item name='available_beds' summary='false'><number>0</number></item>
+<item name='monthly_fee' summary='false'><number>0</number></item>
+<item name='semester_fee' summary='false'><number>0</number></item>
+<item name='area' summary='false'><number>0</number></item></form>
+
