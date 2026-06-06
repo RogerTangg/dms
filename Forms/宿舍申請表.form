@@ -1,516 +1,492 @@
 <?xml version='1.0' encoding='utf-8'?>
-<form name='宿舍申請表' alias='DormApp' xmlns='http://www.lotus.com/dxl' version='12.0'
- maintenanceversion='2.2' replicaid='48258DF7002468B3' publicaccess='false'
- designerversion='8.5.3'>
-<noteinfo noteid='176' unid='24FDF9FDB78C94CA48258DF700281BB2' sequence='74'>
-<created><datetime>20260514T151805,30+08</datetime></created>
-<modified><datetime>20260604T123409,35+08</datetime></modified>
-<revised><datetime>20260604T123409,34+08</datetime></revised>
-<lastaccessed><datetime>20260604T123409,34+08</datetime></lastaccessed>
-<addedtofile><datetime>20260514T151805,93+08</datetime></addedtofile></noteinfo>
-<updatedby><name>CN=B11109006/O=XRedSchool</name></updatedby>
-<wassignedby><name>CN=B11109006/O=XRedSchool</name></wassignedby>
-<actionbar bgcolor='#2563eb' bordercolor='#1d4ed8'>
-<actionbuttonstyle bgcolor='#2563eb'/><font size='9pt' color='white'/><border
- style='solid' width='0px 0px 1px' color='system'/>
-<action title='送出申請' icon='7'><code event='click'><formula>
-@If(@Trim(studentId) = ""; @Return(@Prompt([Ok]; "必填欄位"; "請填寫學號。")); "");
-@If(@Trim(studentName) = ""; @Return(@Prompt([Ok]; "必填欄位"; "請填寫姓名。")); "");
-@If(@Trim(departmentClass) = ""; @Return(@Prompt([Ok]; "必填欄位"; "請填寫系級 / 班級。")); "");
-@If(@Trim(gender) = ""; @Return(@Prompt([Ok]; "必填欄位"; "請選擇性別。")); "");
-@If(@Trim(academicYear) = ""; @Return(@Prompt([Ok]; "必填欄位"; "請選擇學年。")); "");
-@If(@Trim(semester) = ""; @Return(@Prompt([Ok]; "必填欄位"; "請選擇學期。")); "");
-@If(@Trim(stayPeriod) = ""; @Return(@Prompt([Ok]; "必填欄位"; "請選擇住宿期間。")); "");
-@If(@Trim(applicationReasonType) = ""; @Return(@Prompt([Ok]; "必填欄位"; "請選擇申請原因類型。")); "");
-@If(@Trim(emergencyContactName) = ""; @Return(@Prompt([Ok]; "必填欄位"; "請填寫緊急聯絡人姓名。")); "");
-@Command([FileSave]);
-@Command([FileCloseWindow])</formula></code></action>
-<action title='取消' icon='127'><code event='click'><formula>
-@Command([FileCloseWindow])</formula></code></action></actionbar>
-<body><richtext>
-<pardef id='1' align='center'/>
-<par def='1'/>
-<table rowdisplay='tabs' leftmargin='0' widthtype='fixedcenter' refwidth='7.7208in'><tablecolumn
- width='7.7208in'/>
-<tablerow>
-<tablecell bgcolor='#f8fafc'>
-<pardef id='3' align='center' spacebefore='2'/>
-<par def='3'/>
-<table cellbordercolor='#f8fafc' leftmargin='0.0104in' widthtype='fixedcenter'
- refwidth='6.9000in'><tablecolumn width='6.9000in'/>
-<tablerow>
-<tablecell valign='center' bgcolor='#eff6ff'>
-<pardef id='5' align='center' spacebefore='2' keepwithnext='true' keeptogether='true'/>
-<par def='5'><run><font size='26pt' style='bold' name='Microsoft JhengHei'
- pitch='variable' truetype='true' familyid='20' color='#1d4ed8'/>【宿舍申請表】</run></par>
-<pardef id='6' align='center' spaceafter='2' keepwithnext='true' keeptogether='true'/>
-<par def='6'><run><font name='Microsoft JhengHei' pitch='variable' truetype='true'
- familyid='20' color='#64748b'/>Dormitory Application Form</run></par></tablecell></tablerow></table>
-<pardef id='7' align='center'/>
-<par def='7'/>
-<table cellbordercolor='#dbeafe' leftmargin='0.0104in' widthtype='fixedcenter'
- refwidth='6.9000in'><border style='solid' width='1px' color='silver'/><tablecolumn
- width='6.9000in'/>
-<tablerow>
-<tablecell valign='center' bgcolor='#2563eb'>
-<pardef id='8' leftmargin='0.1500in' keepwithnext='true' keeptogether='true'/>
-<par def='8'><run><font size='13pt' style='bold' name='Microsoft JhengHei'
- pitch='variable' truetype='true' familyid='20' color='white'/>一、申請資訊</run></par></tablecell></tablerow></table>
-<pardef id='9' leftmargin='0.1500in' keepwithnext='true' keeptogether='true'/>
-<par def='9'/>
-<table cellbordercolor='#cbd5e1' leftmargin='0.0104in' widthtype='fixedcenter'
- refwidth='6.9000in'><border style='solid' width='1px' color='silver'/><tablecolumn
- width='1.2500in'/><tablecolumn width='2.2000in'/><tablecolumn width='1.2500in'/><tablecolumn
- width='2.2000in'/>
-<tablerow>
-<tablecell valign='center' bgcolor='#f1f5f9'>
-<pardef id='10' leftmargin='0.1201in' spacebefore='1.5' spaceafter='1.5' keepwithnext='true'
- keeptogether='true'/>
-<par def='10'><run><font size='11pt' style='bold' name='Microsoft JhengHei'
- pitch='variable' truetype='true' familyid='20' color='#334155'/>學年</run><run
-><font size='11pt' style='bold' name='Microsoft JhengHei' pitch='variable'
- truetype='true' familyid='20' color='#dc2626'/>*</run></par></tablecell>
-<tablecell valign='center' bgcolor='white'>
-<pardef id='11' leftmargin='0.1201in' spacebefore='1.5' spaceafter='1.5' keepwithnext='true'
- keeptogether='true'/>
-<par def='11'><run><font size='11pt' name='Microsoft JhengHei' pitch='variable'
- truetype='true' familyid='20' color='#0f172a'/></run><run><font size='11pt'
- color='#00201f' name='Microsoft JhengHei' pitch='variable' truetype='true'
- familyid='20'/><field borderstyle='inset' lookupeachchar='false' lookupaddressonrefresh='false'
- type='keyword' kind='editable' name='academicYear'><keywords columns='1'
-><textlist><text>113學年</text><text>114學年</text><text>115學年</text><text
->116學年</text></textlist></keywords><code event='defaultvalue'><formula>"114學年"</formula></code></field></run></par></tablecell>
-<tablecell valign='center' bgcolor='#f1f5f9'>
-<pardef id='12' leftmargin='0.1201in' spacebefore='1.5' spaceafter='1.5' keepwithnext='true'
- keeptogether='true'/>
-<par def='12'><run><font size='11pt' style='bold' name='Microsoft JhengHei'
- pitch='variable' truetype='true' familyid='20' color='#334155'/>學期</run><run
-><font size='11pt' style='bold' name='Microsoft JhengHei' pitch='variable'
- truetype='true' familyid='20' color='#dc2626'/>*</run></par></tablecell>
-<tablecell valign='center' bgcolor='white'>
-<pardef id='13' leftmargin='0.1201in' spacebefore='1.5' spaceafter='1.5' keepwithnext='true'
- keeptogether='true'/>
-<par def='13'><run><font size='11pt' name='Microsoft JhengHei' pitch='variable'
- truetype='true' familyid='20' color='#0f172a'/></run><run><font size='11pt'
- color='#00201f' name='Microsoft JhengHei' pitch='variable' truetype='true'
- familyid='20'/><field borderstyle='inset' lookupeachchar='false' lookupaddressonrefresh='false'
- type='keyword' kind='editable' name='semester'><keywords columns='1'><textlist
-><text>上學期</text><text>下學期</text><text>暑期</text></textlist></keywords><code
- event='defaultvalue'><formula>"上學期"</formula></code></field></run></par></tablecell></tablerow>
-<tablerow>
-<tablecell valign='center' bgcolor='#f8fafc'>
-<par def='10'><run><font size='11pt' style='bold' name='Microsoft JhengHei'
- pitch='variable' truetype='true' familyid='20' color='#334155'/>申請日期</run><run
-><font size='11pt' style='bold' name='Microsoft JhengHei' pitch='variable'
- truetype='true' familyid='20' color='#dc2626'/>*</run></par></tablecell>
-<tablecell columnspan='3' bgcolor='white'>
-<pardef id='15' leftmargin='0.1201in' rightmargin='100%' spacebefore='1.5'
- spaceafter='1.5' keepwithnext='true' keeptogether='true'/>
-<par def='15'><run><font size='11pt' name='Microsoft JhengHei' pitch='variable'
- truetype='true' familyid='20' color='#0f172a'/></run><run><font size='11pt'
- name='Microsoft JhengHei' pitch='variable' truetype='true' familyid='20'/><field
- type='datetime' kind='computedwhencomposed' name='applyDate'><datetimeformat
- show='date' date='yearmonthday' fourdigityearfor21stcentury='true' zone='never'
- dateformat='yearmonthdayweekday' dayformat='twodigitday' monthformat='twodigitmonth'
- yearformat='fourdigityear' weekdayformat='shortname' dateseparator1='/' dateseparator2='/'
- dateseparator3=' ' timeseparator=':' preference='usersetting'/><code event='defaultvalue'><formula
->@Now</formula></code></field></run><run><font size='11pt' name='Microsoft JhengHei'
- pitch='variable' truetype='true' familyid='20'/></run></par></tablecell></tablerow></table>
-<par def='9'/>
-<table cellbordercolor='#dbeafe' leftmargin='0.0104in' widthtype='fixedcenter'
- refwidth='6.9000in'><border style='solid' width='1px' color='silver'/><tablecolumn
- width='6.9000in'/>
-<tablerow>
-<tablecell valign='center' bgcolor='#2563eb'>
-<par def='8'><run><font size='13pt' style='bold' name='Microsoft JhengHei'
- pitch='variable' truetype='true' familyid='20' color='white'/>二、學生基本資料</run></par></tablecell></tablerow></table>
-<par def='9'/>
-<table cellbordercolor='#cbd5e1' leftmargin='0.0104in' widthtype='fixedcenter'
- refwidth='6.9000in'><border style='solid' width='1px' color='silver'/><tablecolumn
- width='1.2500in'/><tablecolumn width='2.2000in'/><tablecolumn width='1.2500in'/><tablecolumn
- width='2.2000in'/>
-<tablerow>
-<tablecell valign='center' bgcolor='#f1f5f9'>
-<par def='10'><run><font size='11pt' style='bold' name='Microsoft JhengHei'
- pitch='variable' truetype='true' familyid='20' color='#334155'/>學號</run><run
-><font size='11pt' style='bold' name='Microsoft JhengHei' pitch='variable'
- truetype='true' familyid='20' color='#dc2626'/>*</run></par></tablecell>
-<tablecell valign='center' bgcolor='white'>
-<par def='11'><run><font size='11pt' name='Microsoft JhengHei' pitch='variable'
- truetype='true' familyid='20' color='#0f172a'/></run><run><font size='11pt'
- color='#00201f' name='Microsoft JhengHei' pitch='variable' truetype='true'
- familyid='20'/><field type='text' kind='editable' name='studentId'><code
- event='inputtranslation'><formula>@Trim(@UpperCase(@ThisValue))</formula></code></field></run><compositedata
- type='98' prevtype='65418' nexttype='222' afterparcount='9' containertype='65418'
- aftercontainercount='1' afterbegincount='3'>
-Yg4BAIQAAAAAAAAAAAA=
-</compositedata></par></tablecell>
-<tablecell valign='center' bgcolor='#f1f5f9'>
-<par def='12'><run><font size='11pt' style='bold' name='Microsoft JhengHei'
- pitch='variable' truetype='true' familyid='20' color='#334155'/>姓名</run><run
-><font size='11pt' style='bold' name='Microsoft JhengHei' pitch='variable'
- truetype='true' familyid='20' color='#dc2626'/>*</run></par></tablecell>
-<tablecell valign='center' bgcolor='white'>
-<par def='13'><run><font size='11pt' name='Microsoft JhengHei' pitch='variable'
- truetype='true' familyid='20' color='#0f172a'/></run><run><font size='11pt'
- color='#00201f' name='Microsoft JhengHei' pitch='variable' truetype='true'
- familyid='20'/><field type='text' kind='editable' name='studentName'/></run><compositedata
- type='98' prevtype='65418' nexttype='222' afterparcount='9' containertype='65418'
- aftercontainercount='1' afterbegincount='3'>
-Yg4BAIQAAAAAAAAAAAA=
-</compositedata></par></tablecell></tablerow>
-<tablerow>
-<tablecell valign='center' bgcolor='#f8fafc'>
-<par def='10'><run><font size='11pt' style='bold' name='Microsoft JhengHei'
- pitch='variable' truetype='true' familyid='20' color='#334155'/>性別</run><run
-><font size='11pt' style='bold' name='Microsoft JhengHei' pitch='variable'
- truetype='true' familyid='20' color='#dc2626'/>*</run></par></tablecell>
-<tablecell valign='center' bgcolor='white'>
-<par def='11'><run><font size='11pt' name='Microsoft JhengHei' pitch='variable'
- truetype='true' familyid='20' color='#0f172a'/></run><run><font size='11pt'
- color='#00201f' name='Microsoft JhengHei' pitch='variable' truetype='true'
- familyid='20'/><field borderstyle='inset' lookupeachchar='false' lookupaddressonrefresh='false'
- type='keyword' kind='editable' name='gender'><keywords columns='1'><textlist
-><text>男</text><text>女</text></textlist></keywords></field></run></par></tablecell>
-<tablecell valign='center' bgcolor='#f8fafc'>
-<par def='12'><run><font size='11pt' style='bold' name='Microsoft JhengHei'
- pitch='variable' truetype='true' familyid='20' color='#334155'/>年級</run></par></tablecell>
-<tablecell valign='center' bgcolor='white'>
-<par def='13'><run><font size='11pt' color='#00201f' name='Microsoft JhengHei'
- pitch='variable' truetype='true' familyid='20'/><field borderstyle='inset'
- lookupeachchar='false' lookupaddressonrefresh='false' type='keyword' kind='editable'
- name='grade'><keywords columns='1'><textlist><text>一年級</text><text
->二年級</text><text>三年級</text><text>四年級</text><text>五年級</text><text>研究所</text></textlist></keywords></field></run></par></tablecell></tablerow>
-<tablerow>
-<tablecell valign='center' bgcolor='#f1f5f9'>
-<par def='10'><run><font size='11pt' style='bold' name='Microsoft JhengHei'
- pitch='variable' truetype='true' familyid='20' color='#334155'/>系級 / 班級</run><run
-><font size='11pt' style='bold' name='Microsoft JhengHei' pitch='variable'
- truetype='true' familyid='20' color='#dc2626'/>*</run></par></tablecell>
-<tablecell valign='center' bgcolor='white'>
-<par def='11'><run><font size='11pt' name='Microsoft JhengHei' pitch='variable'
- truetype='true' familyid='20' color='#0f172a'/></run><run><font size='11pt'
- color='#00201f' name='Microsoft JhengHei' pitch='variable' truetype='true'
- familyid='20'/><field type='text' kind='editable' name='departmentClass'/></run><compositedata
- type='98' prevtype='65418' nexttype='222' afterparcount='9' containertype='65418'
- aftercontainercount='1' afterbegincount='3'>
-Yg4BAIQAAAAAAAAAAAA=
-</compositedata></par></tablecell>
-<tablecell valign='center' bgcolor='#f1f5f9'>
-<par def='12'><run><font size='11pt' style='bold' name='Microsoft JhengHei'
- pitch='variable' truetype='true' familyid='20' color='#334155'/>聯絡電話</run></par></tablecell>
-<tablecell valign='center' bgcolor='white'>
-<par def='13'><run><font size='11pt' name='Microsoft JhengHei' pitch='variable'
- truetype='true' familyid='20' color='#0f172a'/></run><run><font size='11pt'
- color='#00201f' name='Microsoft JhengHei' pitch='variable' truetype='true'
- familyid='20'/><field type='text' kind='editable' name='contactPhone'/></run><compositedata
- type='98' prevtype='65418' nexttype='222' afterparcount='9' containertype='65418'
- aftercontainercount='1' afterbegincount='3'>
-Yg4BAIQAAAAAAAAAAAA=
-</compositedata></par></tablecell></tablerow>
-<tablerow>
-<tablecell valign='center' bgcolor='#f8fafc'>
-<par def='10'><run><font size='11pt' style='bold' name='Microsoft JhengHei'
- pitch='variable' truetype='true' familyid='20' color='#334155'/>Email</run></par></tablecell>
-<tablecell columnspan='3' bgcolor='white'>
-<par def='15'><run><font size='11pt' name='Microsoft JhengHei' pitch='variable'
- truetype='true' familyid='20'/><field type='text' kind='editable' name='email'/></run><compositedata
- type='98' prevtype='65418' nexttype='222' afterparcount='6' containertype='65418'
- aftercontainercount='1' afterbegincount='3'>
-Yg4BAIQAAAAAAAAAAAA=
-</compositedata><run><font size='11pt'
- name='Microsoft JhengHei' pitch='variable' truetype='true' familyid='20'/></run></par></tablecell></tablerow>
-<tablerow>
-<tablecell valign='center' bgcolor='#f1f5f9'>
-<par def='10'><run><font size='11pt' style='bold' name='Microsoft JhengHei'
- pitch='variable' truetype='true' familyid='20' color='#334155'/>戶籍地址</run></par></tablecell>
-<tablecell columnspan='3' bgcolor='white'>
-<par def='15'><run><font size='11pt' name='Microsoft JhengHei' pitch='variable'
- truetype='true' familyid='20'/><field type='text' kind='editable' name='registeredAddress'/></run><compositedata
- type='98' prevtype='65418' nexttype='222' afterparcount='6' containertype='65418'
- aftercontainercount='1' afterbegincount='3'>
-Yg4BAIQAAAAAAAAAAAA=
-</compositedata><run><font size='11pt'
- name='Microsoft JhengHei' pitch='variable' truetype='true' familyid='20'/></run></par></tablecell></tablerow>
-<tablerow>
-<tablecell valign='center' bgcolor='#f8fafc'>
-<par def='10'><run><font size='11pt' style='bold' name='Microsoft JhengHei'
- pitch='variable' truetype='true' familyid='20' color='#334155'/>現居地址</run></par></tablecell>
-<tablecell columnspan='3' bgcolor='white'>
-<par def='15'><run><font size='11pt' name='Microsoft JhengHei' pitch='variable'
- truetype='true' familyid='20'/><field type='text' kind='editable' name='currentAddress'/></run><compositedata
- type='98' prevtype='65418' nexttype='222' afterparcount='6' containertype='65418'
- aftercontainercount='1' afterbegincount='3'>
-Yg4BAIQAAAAAAAAAAAA=
-</compositedata><run><font size='11pt'
- name='Microsoft JhengHei' pitch='variable' truetype='true' familyid='20'/></run></par></tablecell></tablerow></table>
-<par def='9'/>
-<table cellbordercolor='#dbeafe' leftmargin='0.0104in' widthtype='fixedcenter'
- refwidth='6.9000in'><border style='solid' width='1px' color='silver'/><tablecolumn
- width='6.9000in'/>
-<tablerow>
-<tablecell valign='center' bgcolor='#2563eb'>
-<par def='8'><run><font size='13pt' style='bold' name='Microsoft JhengHei'
- pitch='variable' truetype='true' familyid='20' color='white'/>三、申請原因與志願</run></par></tablecell></tablerow></table>
-<par def='9'/>
-<table cellbordercolor='#cbd5e1' leftmargin='0.0104in' widthtype='fixedcenter'
- refwidth='7.0736in'><border style='solid' width='1px' color='silver'/><tablecolumn
- width='1.2500in'/><tablecolumn width='2.3625in'/><tablecolumn width='1.2500in'/><tablecolumn
- width='2.2111in'/>
-<tablerow>
-<tablecell valign='center' bgcolor='#f1f5f9'>
-<pardef id='16' leftmargin='0.1201in' spacebefore='1.5' spaceafter='1.5' keepwithnext='true'
- keeptogether='true'/>
-<par def='16'><run><font size='11pt' style='bold' name='Microsoft JhengHei'
- pitch='variable' truetype='true' familyid='20' color='#334155'/>住宿期間</run><run
-><font size='11pt' style='bold' name='Microsoft JhengHei' pitch='variable'
- truetype='true' familyid='20' color='#dc2626'/>*</run></par></tablecell>
-<tablecell valign='center' bgcolor='white'>
-<pardef id='17' leftmargin='0.1201in' spacebefore='1.5' spaceafter='1.5' keepwithnext='true'
- keeptogether='true'/>
-<par def='17'><run><font size='11pt' name='Microsoft JhengHei' pitch='variable'
- truetype='true' familyid='20' color='#0f172a'/></run><run><font size='11pt'
- color='#00201f' name='Microsoft JhengHei' pitch='variable' truetype='true'
- familyid='20'/><field borderstyle='inset' lookupeachchar='false' lookupaddressonrefresh='false'
- type='keyword' kind='editable' name='stayPeriod'><keywords columns='1'><textlist
-><text>一學期</text><text>一學年</text></textlist></keywords></field></run></par></tablecell>
-<tablecell valign='center' bgcolor='#f1f5f9'>
-<pardef id='18' leftmargin='0.1201in' spacebefore='1.5' spaceafter='1.5' keepwithnext='true'
- keeptogether='true'/>
-<par def='18'><run><font size='11pt' style='bold' name='Microsoft JhengHei'
- pitch='variable' truetype='true' familyid='20' color='#334155'/>志願棟別</run></par></tablecell>
-<tablecell valign='center' bgcolor='white'>
-<pardef id='19' leftmargin='0.1201in' spacebefore='1.5' spaceafter='1.5' keepwithnext='true'
- keeptogether='true'/>
-<par def='19'><run><font size='11pt' color='#00201f' name='Microsoft JhengHei'
- pitch='variable' truetype='true' familyid='20'/><field borderstyle='inset'
- lookupeachchar='false' lookupaddressonrefresh='false' type='keyword' kind='editable'
- name='preferredBuilding'><keywords columns='1'><textlist><text
->第一宿舍</text><text>第二宿舍</text><text>第三宿舍</text><text>女生宿舍</text><text>研究生宿舍</text><text
->不指定</text></textlist></keywords></field></run></par></tablecell></tablerow>
-<tablerow>
-<tablecell valign='center' bgcolor='#f8fafc'>
-<par def='16'><run><font size='11pt' style='bold' name='Microsoft JhengHei'
- pitch='variable' truetype='true' familyid='20' color='#334155'/>志願房型</run></par></tablecell>
-<tablecell valign='center' bgcolor='white'>
-<par def='17'><run><font size='11pt' color='#00201f' name='Microsoft JhengHei'
- pitch='variable' truetype='true' familyid='20'/><field borderstyle='inset'
- lookupeachchar='false' lookupaddressonrefresh='false' type='keyword' kind='editable'
- name='preferredRoomType'><keywords columns='1'><textlist><text
->單人房</text><text>雙人房</text><text>三人房</text><text>四人房</text><text>不指定</text></textlist></keywords></field></run></par></tablecell>
-<tablecell valign='center' bgcolor='#f8fafc'>
-<par def='18'><run><font size='11pt' style='bold' name='Microsoft JhengHei'
- pitch='variable' truetype='true' familyid='20' color='#334155'/>室友偏好</run></par></tablecell>
-<tablecell valign='center' bgcolor='white'>
-<par def='19'><run><font size='11pt' color='#00201f' name='Microsoft JhengHei'
- pitch='variable' truetype='true' familyid='20'/><field type='text' kind='editable'
- name='roommatePreference'/></run><compositedata type='98' prevtype='65418'
- nexttype='222' afterparcount='6' containertype='65418' aftercontainercount='1'
- afterbegincount='3'>
-Yg4BAIQAAAAAAAAAAAA=
-</compositedata></par></tablecell></tablerow>
-<tablerow>
-<tablecell valign='center' bgcolor='#f1f5f9'>
-<par def='16'><run><font size='11pt' style='bold' name='Microsoft JhengHei'
- pitch='variable' truetype='true' familyid='20' color='#334155'/>特殊需求</run></par></tablecell>
-<tablecell columnspan='3' bgcolor='white'>
-<pardef id='21' leftmargin='0.1201in' rightmargin='100%' spacebefore='1.5'
- spaceafter='1.5' keepwithnext='true' keeptogether='true'/>
-<par def='21'><run><font size='11pt' name='Microsoft JhengHei' pitch='variable'
- truetype='true' familyid='20'/><field type='text' kind='editable' name='specialNeeds'/></run><compositedata
- type='98' prevtype='65418' nexttype='222' afterparcount='7' containertype='65418'
- aftercontainercount='1' afterbegincount='3'>
-Yg4BAIQAAAAAAAAAAAA=
-</compositedata><run><font size='11pt'
- name='Microsoft JhengHei' pitch='variable' truetype='true' familyid='20'/></run></par></tablecell></tablerow>
-<tablerow>
-<tablecell valign='center' bgcolor='#f8fafc'>
-<par def='16'><run><font size='11pt' style='bold' name='Microsoft JhengHei'
- pitch='variable' truetype='true' familyid='20' color='#334155'/>申請原因類型</run><run
-><font size='11pt' style='bold' name='Microsoft JhengHei' pitch='variable'
- truetype='true' familyid='20' color='#dc2626'/>*</run></par></tablecell>
-<tablecell columnspan='3' bgcolor='white'>
-<par def='21'><run><font size='11pt' name='Microsoft JhengHei' pitch='variable'
- truetype='true' familyid='20'/><field borderstyle='inset' lookupeachchar='false'
- lookupaddressonrefresh='false' type='keyword' kind='editable' name='applicationReasonType'><keywords
- columns='1'><textlist><text>通勤距離過遠</text><text>家庭因素</text><text
->課業需求</text><text>經濟因素</text><text>健康因素</text><text>其他</text></textlist></keywords></field></run><run
-><font size='11pt' name='Microsoft JhengHei' pitch='variable' truetype='true'
- familyid='20'/></run></par></tablecell></tablerow>
-<tablerow>
-<tablecell valign='center' bgcolor='#f1f5f9'>
-<par def='16'><run><font size='11pt' style='bold' name='Microsoft JhengHei'
- pitch='variable' truetype='true' familyid='20' color='#334155'/>申請原因說明</run></par></tablecell>
-<tablecell columnspan='3' bgcolor='white'>
-<par def='21'><run><font size='9pt' name='Microsoft JhengHei' pitch='variable'
- truetype='true' familyid='20' color='#37605e'/>請簡要說明申請住宿原因，例：通勤距離、家庭因素、課業需求或其他特殊情況。</run></par>
-<par def='21'><run><font size='11pt' name='Microsoft JhengHei' pitch='variable'
- truetype='true' familyid='20'/><field type='text' kind='editable' name='applicationReasonDetail'/></run><compositedata
- type='98' prevtype='65418' nexttype='222' afterparcount='6' containertype='65418'
- aftercontainercount='1' afterbegincount='3'>
-Yg4BAIQAAAAAAAAAAAA=
-</compositedata><run><font size='11pt'
- name='Microsoft JhengHei' pitch='variable' truetype='true' familyid='20'/></run></par></tablecell></tablerow>
-<tablerow>
-<tablecell valign='center' bgcolor='#f8fafc'>
-<par def='16'><run><font size='11pt' style='bold' name='Microsoft JhengHei'
- pitch='variable' truetype='true' familyid='20' color='#334155'/>附件檔案</run></par></tablecell>
-<tablecell columnspan='3' bgcolor='white'>
-<par def='21'><run><font size='9pt' name='Microsoft JhengHei' pitch='variable'
- truetype='true' familyid='20' color='#37605e'/>可上傳相關證明文件（如戶籍謄本、醫療證明等）。</run></par>
-<par def='21'><run><font size='11pt' name='Microsoft JhengHei' pitch='variable'
- truetype='true' familyid='20'/><field type='richtext' kind='editable' name='attachmentFile'/></run><compositedata
- type='98' prevtype='65418' nexttype='222' afterparcount='6' containertype='65418'
- aftercontainercount='1' afterbegincount='3'>
-Yg4BAIQAAAAAAAEAAAA=
-</compositedata><run><font size='11pt'
- name='Microsoft JhengHei' pitch='variable' truetype='true' familyid='20'/></run></par></tablecell></tablerow></table>
-<par def='9'/>
-<table cellbordercolor='#dbeafe' leftmargin='0.0104in' widthtype='fixedcenter'
- refwidth='6.9000in'><border style='solid' width='1px' color='silver'/><tablecolumn
- width='6.9000in'/>
-<tablerow>
-<tablecell valign='center' bgcolor='#2563eb'>
-<par def='8'><run><font size='13pt' style='bold' name='Microsoft JhengHei'
- pitch='variable' truetype='true' familyid='20' color='white'/>四、緊急聯絡人</run></par></tablecell></tablerow></table>
-<par def='9'/>
-<table cellbordercolor='#cbd5e1' leftmargin='0.0104in' widthtype='fixedcenter'
- refwidth='7.6542in'><border style='solid' width='1px' color='silver'/><tablecolumn
- width='1.2500in'/><tablecolumn width='2.5083in'/><tablecolumn width='1.2500in'/><tablecolumn
- width='2.6458in'/>
-<tablerow>
-<tablecell valign='center' bgcolor='#f1f5f9'>
-<pardef id='23' leftmargin='0.1201in' spacebefore='1.5' spaceafter='1.5' keepwithnext='true'
- keeptogether='true'/>
-<par def='23'><run><font size='11pt' style='bold' name='Microsoft JhengHei'
- pitch='variable' truetype='true' familyid='20' color='#334155'/>緊急聯絡人姓名</run><run
-><font size='11pt' style='bold' name='Microsoft JhengHei' pitch='variable'
- truetype='true' familyid='20' color='#dc2626'/>*</run></par></tablecell>
-<tablecell valign='center' bgcolor='white'>
-<pardef id='24' leftmargin='0.1201in' spacebefore='1.5' spaceafter='1.5' keepwithnext='true'
- keeptogether='true'/>
-<par def='24'><run><font size='11pt' color='#00201f' name='Microsoft JhengHei'
- pitch='variable' truetype='true' familyid='20'/><field type='text' kind='editable'
- name='emergencyContactName'/></run><compositedata type='98' prevtype='65418'
- nexttype='222' afterparcount='7' containertype='65418' aftercontainercount='1'
- afterbegincount='3'>
-Yg4BAIQAAAAAAAAAAAA=
-</compositedata></par></tablecell>
-<tablecell valign='center' bgcolor='#f1f5f9'>
-<pardef id='25' leftmargin='0.1201in' spacebefore='1.5' spaceafter='1.5' keepwithnext='true'
- keeptogether='true'/>
-<par def='25'><run><font size='11pt' style='bold' name='Microsoft JhengHei'
- pitch='variable' truetype='true' familyid='20' color='#334155'/>關係</run></par></tablecell>
-<tablecell valign='center' bgcolor='white'>
-<pardef id='26' leftmargin='0.1201in' spacebefore='1.5' spaceafter='1.5' keepwithnext='true'
- keeptogether='true'/>
-<par def='26'><run><font size='11pt' color='#00201f' name='Microsoft JhengHei'
- pitch='variable' truetype='true' familyid='20'/><field borderstyle='inset'
- lookupeachchar='false' lookupaddressonrefresh='false' type='keyword' kind='editable'
- name='emergencyContactRelation'><keywords columns='1'><textlist
-><text>父</text><text>母</text><text>監護人</text><text>配偶</text><text>兄弟姊妹</text><text
->其他親友</text></textlist></keywords></field></run></par></tablecell></tablerow>
-<tablerow>
-<tablecell valign='center' bgcolor='#f8fafc'>
-<par def='23'><run><font size='11pt' style='bold' name='Microsoft JhengHei'
- pitch='variable' truetype='true' familyid='20' color='#334155'/>緊急聯絡電話</run></par></tablecell>
-<tablecell columnspan='3' bgcolor='white'>
-<pardef id='28' leftmargin='0.1201in' rightmargin='100%' spacebefore='1.5'
- spaceafter='1.5' keepwithnext='true' keeptogether='true'/>
-<par def='28'><run><font size='11pt' name='Microsoft JhengHei' pitch='variable'
- truetype='true' familyid='20'/><field type='text' kind='editable' name='emergencyContactPhone'/></run><compositedata
- type='98' prevtype='65418' nexttype='222' afterparcount='7' containertype='65418'
- aftercontainercount='1' afterbegincount='3'>
-Yg4BAIQAAAAAAAAAAAA=
-</compositedata><run><font size='11pt'
- name='Microsoft JhengHei' pitch='variable' truetype='true' familyid='20'/></run></par></tablecell></tablerow></table>
-<par def='9'/>
-<table cellbordercolor='#dbeafe' leftmargin='0.0104in' widthtype='fixedcenter'
- refwidth='6.9000in'><border style='solid' width='1px' color='silver'/><tablecolumn
- width='6.9000in'/>
-<tablerow>
-<tablecell valign='center' bgcolor='#2563eb'>
-<par def='8'><run><font size='13pt' style='bold' name='Microsoft JhengHei'
- pitch='variable' truetype='true' familyid='20' color='white'/>五、審核結果</run></par></tablecell></tablerow></table>
-<par def='9'/>
-<table cellbordercolor='#cbd5e1' leftmargin='0.0104in' widthtype='fixedcenter'
- refwidth='6.9000in'><border style='solid' width='1px' color='silver'/><tablecolumn
- width='1.2500in'/><tablecolumn width='2.2000in'/><tablecolumn width='1.2500in'/><tablecolumn
- width='2.2000in'/>
-<tablerow>
-<tablecell valign='center' bgcolor='#f1f5f9'>
-<par def='10'><run><font size='11pt' style='bold' name='Microsoft JhengHei'
- pitch='variable' truetype='true' familyid='20' color='#334155'/>申請狀態</run></par></tablecell>
-<tablecell valign='center' bgcolor='white'>
-<par def='11'><run><font size='11pt' color='#00201f' name='Microsoft JhengHei'
- pitch='variable' truetype='true' familyid='20'/><field borderstyle='inset'
- lookupeachchar='false' lookupaddressonrefresh='false' type='keyword' kind='editable'
- name='applyStatus'><keywords columns='1'><textlist><text>草稿</text><text
->已送出</text><text>審核中</text><text>已核准</text><text>已退回</text><text>取消</text></textlist></keywords><code
- event='defaultvalue'><formula>"草稿"</formula></code></field></run></par></tablecell>
-<tablecell valign='center' bgcolor='#f1f5f9'>
-<par def='12'><run><font size='11pt' style='bold' name='Microsoft JhengHei'
- pitch='variable' truetype='true' familyid='20' color='#334155'/>審核結果</run></par></tablecell>
-<tablecell valign='center' bgcolor='white'>
-<par def='13'><run><font size='11pt' color='#00201f' name='Microsoft JhengHei'
- pitch='variable' truetype='true' familyid='20'/><field borderstyle='inset'
- lookupeachchar='false' lookupaddressonrefresh='false' type='keyword' kind='editable'
- name='reviewResult'><keywords columns='1'><textlist><text>通過</text><text
->不通過</text><text>候補</text><text>待補件</text></textlist></keywords></field></run></par></tablecell></tablerow>
-<tablerow>
-<tablecell valign='center' bgcolor='#f8fafc'>
-<par def='10'><run><font size='11pt' style='bold' name='Microsoft JhengHei'
- pitch='variable' truetype='true' familyid='20' color='#334155'/>審核人</run></par></tablecell>
-<tablecell valign='center' bgcolor='white'>
-<par def='11'><run><font size='11pt' color='#00201f' name='Microsoft JhengHei'
- pitch='variable' truetype='true' familyid='20'/><field type='names' kind='editable'
- name='reviewer'/></run></par></tablecell>
-<tablecell valign='center' bgcolor='#f8fafc'>
-<par def='12'><run><font size='11pt' style='bold' name='Microsoft JhengHei'
- pitch='variable' truetype='true' familyid='20' color='#334155'/>審核日期</run></par></tablecell>
-<tablecell valign='center' bgcolor='white'>
-<par def='13'><run><font size='11pt' color='#00201f' name='Microsoft JhengHei'
- pitch='variable' truetype='true' familyid='20'/><field type='datetime' kind='editable'
- name='reviewDate'><datetimeformat show='date' date='yearmonthday' fourdigityearfor21stcentury='true'
- zone='never' dateformat='yearmonthdayweekday' dayformat='twodigitday' monthformat='twodigitmonth'
- yearformat='fourdigityear' weekdayformat='shortname' dateseparator1='/' dateseparator2='/'
- dateseparator3=' ' timeseparator=':' preference='usersetting'/></field></run></par></tablecell></tablerow>
-<tablerow>
-<tablecell valign='center' bgcolor='#f1f5f9'>
-<par def='10'><run><font size='11pt' style='bold' name='Microsoft JhengHei'
- pitch='variable' truetype='true' familyid='20' color='#334155'/>分配房間</run></par></tablecell>
-<tablecell valign='center' bgcolor='white'>
-<par def='11'><run><font size='11pt' color='#00201f' name='Microsoft JhengHei'
- pitch='variable' truetype='true' familyid='20'/><field type='text' kind='editable'
- name='assignedRoom'/></run><compositedata type='98' prevtype='65418' nexttype='222'
- afterparcount='6' containertype='65418' aftercontainercount='1' afterbegincount='3'>
-Yg4BAIQAAAAAAAAAAAA=
-</compositedata></par></tablecell>
-<tablecell valign='center' bgcolor='#f1f5f9'>
-<par def='12'><run><font size='11pt' style='bold' name='Microsoft JhengHei'
- pitch='variable' truetype='true' familyid='20' color='#334155'/>分配床位</run></par></tablecell>
-<tablecell valign='center' bgcolor='white'>
-<par def='13'><run><font size='11pt' color='#00201f' name='Microsoft JhengHei'
- pitch='variable' truetype='true' familyid='20'/><field type='text' kind='editable'
- name='assignedBed'/></run><compositedata type='98' prevtype='65418' nexttype='222'
- afterparcount='6' containertype='65418' aftercontainercount='1' afterbegincount='3'>
-Yg4BAIQAAAAAAAAAAAA=
-</compositedata></par></tablecell></tablerow>
-<tablerow>
-<tablecell valign='center' bgcolor='#f8fafc'>
-<par def='10'><run><font size='11pt' style='bold' name='Microsoft JhengHei'
- pitch='variable' truetype='true' familyid='20' color='#334155'/>審核意見</run></par></tablecell>
-<tablecell columnspan='3' bgcolor='white'>
-<par def='15'><run><font size='11pt' name='Microsoft JhengHei' pitch='variable'
- truetype='true' familyid='20'/><field type='text' kind='editable' name='reviewComment'/></run><compositedata
- type='98' prevtype='65418' nexttype='222' afterparcount='6' containertype='65418'
- aftercontainercount='1' afterbegincount='3'>
-Yg4BAIQAAAAAAAAAAAA=
-</compositedata><run><font size='11pt'
- name='Microsoft JhengHei' pitch='variable' truetype='true' familyid='20'/></run></par></tablecell></tablerow></table>
-<pardef id='29' leftmargin='0.1500in' spacebefore='2' spaceafter='2'/>
-<par def='29'><run><font size='9pt' name='Microsoft JhengHei' pitch='variable'
- truetype='true' familyid='20' color='#94a3b8'/>註:分配房間與床位由宿舍管理員於審核通過後填寫;申請送出後,申請人不得自行修改表單。</run></par></tablecell></tablerow></table>
-<par def='1'/></richtext></body>
-<item name='$$ScriptName' summary='false' sign='true'><text>DormApp</text></item></form>
+<note class='form' xmlns='http://www.lotus.com/dxl' version='12.0' maintenanceversion='2.0'
+ replicaid='48258DF7002468B3'>
+<noteinfo noteid='282' unid='4933C911F308CE1748258E0C002BEB84' sequence='8'>
+<created><datetime>20260604T155943,40+08</datetime></created>
+<modified><datetime>20260605T013257,39+08</datetime></modified>
+<revised><datetime>20260605T013257,38+08</datetime></revised>
+<lastaccessed><datetime>20260605T013257,38+08</datetime></lastaccessed>
+<addedtofile><datetime>20260604T155943,66+08</datetime></addedtofile></noteinfo>
+<updatedby><name>CN=B11209046/O=XRedSchool</name></updatedby>
+<wassignedby><name>CN=B11209046/O=XRedSchool</name></wassignedby>
+<item name='$HTMLCode' sign='true'>
+<rawitemdata type='1'>
+X/8QAAIADwAHAAAAAAAAAA==
+</rawitemdata></item>
+<item name='$TITLE'><textlist><text>宿舍申請表</text><text>DormApp</text></textlist></item>
+<item name='$Info' sign='true'>
+<rawitemdata type='1'>
+hhgBAIAAAAAAgAAAAQABAP///wAAAAAA
+</rawitemdata></item>
+<item name='$Flags'><text/></item>
+<item name='$DesignerVersion'><text>8.5.3</text></item>
+<item name='$Fonts'>
+<rawitemdata type='1'>
+i/8oAAEABSZNaWNyb3NvZnQgSmhlbmdIZWkAAAAAAAAAAAAAAAAAAA==
+</rawitemdata></item>
+<item name='$$ScriptName' summary='false' sign='true'><text>DormApp</text></item>
+<item name='academicYear' placeholder='true'>
+<rawitemdata type='0'>
+</rawitemdata></item>
+<item name='semester' placeholder='true'>
+<rawitemdata type='0'>
+</rawitemdata></item>
+<item name='applyDate' summary='false'>
+<rawitemdata type='400'>
+AAAAAAAAAAA=
+</rawitemdata></item>
+<item name='studentId' placeholder='true'>
+<rawitemdata type='0'>
+</rawitemdata></item>
+<item name='studentName' placeholder='true'>
+<rawitemdata type='0'>
+</rawitemdata></item>
+<item name='gender' placeholder='true'>
+<rawitemdata type='0'>
+</rawitemdata></item>
+<item name='grade' placeholder='true'>
+<rawitemdata type='0'>
+</rawitemdata></item>
+<item name='departmentClass' placeholder='true'>
+<rawitemdata type='0'>
+</rawitemdata></item>
+<item name='contactPhone' placeholder='true'>
+<rawitemdata type='0'>
+</rawitemdata></item>
+<item name='email' placeholder='true'>
+<rawitemdata type='0'>
+</rawitemdata></item>
+<item name='registeredAddress' placeholder='true'>
+<rawitemdata type='0'>
+</rawitemdata></item>
+<item name='currentAddress' placeholder='true'>
+<rawitemdata type='0'>
+</rawitemdata></item>
+<item name='stayPeriod' placeholder='true'>
+<rawitemdata type='0'>
+</rawitemdata></item>
+<item name='preferredBuilding' placeholder='true'>
+<rawitemdata type='0'>
+</rawitemdata></item>
+<item name='preferredRoomType' placeholder='true'>
+<rawitemdata type='0'>
+</rawitemdata></item>
+<item name='roommatePreference' placeholder='true'>
+<rawitemdata type='0'>
+</rawitemdata></item>
+<item name='specialNeeds' placeholder='true'>
+<rawitemdata type='0'>
+</rawitemdata></item>
+<item name='applicationReasonType' placeholder='true'>
+<rawitemdata type='0'>
+</rawitemdata></item>
+<item name='applicationReasonDetail' placeholder='true'>
+<rawitemdata type='0'>
+</rawitemdata></item>
+<item name='attachmentFile' placeholder='true'>
+<rawitemdata type='0'>
+</rawitemdata></item>
+<item name='emergencyContactName' placeholder='true'>
+<rawitemdata type='0'>
+</rawitemdata></item>
+<item name='emergencyContactRelation' placeholder='true'>
+<rawitemdata type='0'>
+</rawitemdata></item>
+<item name='emergencyContactPhone' placeholder='true'>
+<rawitemdata type='0'>
+</rawitemdata></item>
+<item name='applyStatus' placeholder='true'>
+<rawitemdata type='0'>
+</rawitemdata></item>
+<item name='reviewResult' placeholder='true'>
+<rawitemdata type='0'>
+</rawitemdata></item>
+<item name='reviewer' placeholder='true'>
+<rawitemdata type='0'>
+</rawitemdata></item>
+<item name='reviewDate' summary='false'>
+<rawitemdata type='400'>
+AAAAAAAAAAA=
+</rawitemdata></item>
+<item name='assignedRoom' placeholder='true'>
+<rawitemdata type='0'>
+</rawitemdata></item>
+<item name='assignedBed' placeholder='true'>
+<rawitemdata type='0'>
+</rawitemdata></item>
+<item name='assignedBuilding' placeholder='true'>
+<rawitemdata type='0'>
+</rawitemdata></item>
+<item name='assignedRoomType' placeholder='true'>
+<rawitemdata type='0'>
+</rawitemdata></item>
+<item name='reviewComment' placeholder='true'>
+<rawitemdata type='0'>
+</rawitemdata></item>
+<item name='$Fields'><textlist><text>reviewComment</text><text>assignedRoomType</text><text
+>assignedBuilding</text><text>assignedBed</text><text>assignedRoom</text><text
+>reviewDate</text><text>reviewer</text><text>reviewResult</text><text>applyStatus</text><text
+>emergencyContactPhone</text><text>emergencyContactRelation</text><text>emergencyContactName</text><text
+>attachmentFile</text><text>applicationReasonDetail</text><text>applicationReasonType</text><text
+>specialNeeds</text><text>roommatePreference</text><text>preferredRoomType</text><text
+>preferredBuilding</text><text>stayPeriod</text><text>currentAddress</text><text
+>registeredAddress</text><text>email</text><text>contactPhone</text><text
+>departmentClass</text><text>grade</text><text>gender</text><text>studentName</text><text
+>studentId</text><text>applyDate</text><text>semester</text><text>academicYear</text></textlist></item>
+<item name='$Body' sign='true'>
+<rawitemdata type='1'>
+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
+</rawitemdata></item>
+<item name='$V5ACTIONS' sign='true'>
+<rawitemdata type='1'>
+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
+AAMACTBSAA==
+</rawitemdata></item></note>
 

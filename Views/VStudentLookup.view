@@ -1,0 +1,32 @@
+<?xml version='1.0' encoding='utf-8'?>
+<view name='VStudentLookup' alias='VStudentLookup' xmlns='http://www.lotus.com/dxl'
+ version='12.0' maintenanceversion='2.2' replicaid='48258DF7002468B3' showinmenu='false'
+ noreplace='true' publicaccess='false' designerversion='8.5.3' unreadmarks='none'
+ headers='simple' rowlinecount='1' headerlinecount='1' bgcolor='white' uniquekeys='false'>
+<noteinfo unid='C1D2E3F4A5B6C7D848258E0E00010003'>
+<created><datetime>20260605T020000,00+08</datetime></created>
+<modified><datetime>20260605T020000,00+08</datetime></modified>
+<revised><datetime>20260605T020000,00+08</datetime></revised>
+<lastaccessed><datetime>20260605T020000,00+08</datetime></lastaccessed>
+<addedtofile><datetime>20260605T020000,00+08</datetime></addedtofile></noteinfo>
+<updatedby><name>CN=B11109006/O=XRedSchool</name></updatedby>
+<wassignedby><name>CN=B11109006/O=XRedSchool</name></wassignedby>
+<code event='selection'><formula>SELECT Form = "DormApp" &amp; applyStatus = "已核准"</formula></code>
+<column sort='ascending' hidedetailrows='false' itemname='studentId' width='12'
+ resizable='true' separatemultiplevalues='false' sortnoaccent='true' sortnocase='true'
+ showaslinks='false'><columnheader title='studentId'/></column>
+<column hidedetailrows='false' itemname='studentName' width='10' resizable='true'
+ separatemultiplevalues='false' sortnoaccent='true' sortnocase='true' showaslinks='false'><columnheader
+ title='studentName'/></column>
+<column hidedetailrows='false' itemname='departmentClass' width='12' resizable='true'
+ separatemultiplevalues='false' sortnoaccent='true' sortnocase='true' showaslinks='false'><columnheader
+ title='departmentClass'/></column>
+<column hidedetailrows='false' itemname='gender' width='6' resizable='true'
+ separatemultiplevalues='false' sortnoaccent='true' sortnocase='true' showaslinks='false'><columnheader
+ title='gender'/></column>
+<column hidedetailrows='false' itemname='assignedBuilding' width='10' resizable='true'
+ separatemultiplevalues='false' sortnoaccent='true' sortnocase='true' showaslinks='false'><columnheader
+ title='assignedBuilding'/></column>
+<column hidedetailrows='false' itemname='assignedRoom' width='12' resizable='true'
+ separatemultiplevalues='false' sortnoaccent='true' sortnocase='true' showaslinks='false'><columnheader
+ title='assignedRoom'/></column></view>

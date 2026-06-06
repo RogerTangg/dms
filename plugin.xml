@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<plugin class="plugin.Activator" id="DMS3" name="Domino Designer"
+<plugin class="plugin.Activator" id="宿舍資訊系統4" name="Domino Designer"
   provider="TODO" version="1.0.0">
   <requires>
     <!--AUTOGEN-START-BUILDER：由 null 自動產生。請勿修改。-->

@@ -21,10 +21,7 @@
 <actionbar bgcolor='#ca8a04' bordercolor='#a16207'>
 <actionbuttonstyle bgcolor='#ca8a04'/><font size='9pt' color='white'/><border
  style='solid' width='0px 0px 1px' color='system'/>
-<action title='核准' icon='98'><code event='click'><formula>@Command([EditDocument]); @SetField("visitStatus"; "已核准")</formula></code></action>
-<action title='拒絕' icon='127'><code event='click'><formula>@Command([EditDocument]); @SetField("visitStatus"; "拒絕")</formula></code></action>
-<action title='檢視詳情' icon='91'><code event='click'><formula>@Command([EditDocument])</formula></code></action>
-<action title='取消' icon='95'><code event='click'><formula>@Command([EditDocument]); @SetField("visitStatus"; "已取消")</formula></code></action></actionbar>
+<action title='檢視/審核' icon='91'><code event='click'><formula>@Command([EditDocument])</formula></code></action></actionbar>
 <column sort='ascending' hidedetailrows='false' itemname='createdAt' width='14'
  resizable='true' separatemultiplevalues='false' sortnoaccent='false' sortnocase='false'
  showaslinks='false'><columnheader title='登記時間'><font size='9pt' color='white'

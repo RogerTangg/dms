@@ -21,8 +21,7 @@
 <actionbar bgcolor='#dc2626' bordercolor='#991b1b'>
 <actionbuttonstyle bgcolor='#dc2626'/><font size='9pt' color='white'/><border
  style='solid' width='0px 0px 1px' color='system'/>
-<action title='處理違規' icon='91'><code event='click'><formula>@Command([EditDocument])</formula></code></action>
-<action title='標記完成' icon='98'><code event='click'><formula>@Command([EditDocument]); @SetField("processStatus"; "已完成")</formula></code></action></actionbar>
+<action title='處理違規' icon='91'><code event='click'><formula>@Command([EditDocument])</formula></code></action></actionbar>
 <column sort='descending' hidedetailrows='false' itemname='violationDate'
  width='12' resizable='true' separatemultiplevalues='false' sortnoaccent='false'
  sortnocase='false' showaslinks='false'><columnheader title='違規日期'><font size='9pt'

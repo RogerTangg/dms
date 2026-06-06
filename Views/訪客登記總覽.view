@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='utf-8'?>
-<view name='訪客登記總覽' alias='VFVisitor1' xmlns='http://www.lotus.com/dxl' version='12.0'
+<view name='訪客登記總覽' alias='VFVisitor' xmlns='http://www.lotus.com/dxl' version='12.0'
  maintenanceversion='2.2' replicaid='48258DF7002468B3' showinmenu='false'
  noreplace='true' publicaccess='false' designerversion='8.5.3' unreadmarks='none'
  onopengoto='lastopened' onrefresh='displayindicator' headers='simple' opencollapsed='false'
@@ -17,7 +17,7 @@
 <addedtofile><datetime>20260604T152926,56+08</datetime></addedtofile></noteinfo>
 <updatedby><name>CN=B11109006/O=XRedSchool</name></updatedby>
 <wassignedby><name>CN=B11109006/O=XRedSchool</name></wassignedby><code event='selection'><formula
->SELECT @All</formula></code>
+>SELECT Form = "FVisitor"</formula></code>
 <actionbar bgcolor='#16a34a' bordercolor='#15803d'>
 <actionbuttonstyle bgcolor='#16a34a'/><font size='9pt' color='white'/><border
  style='solid' width='0px 0px 1px' color='system'/>

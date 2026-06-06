@@ -16,9 +16,20 @@
 <action title='儲存' icon='5'><code event='click'><formula>
 @If(@Trim(violationDate) = ""; @Return(@Prompt([Ok]; "必填欄位"; "請填寫違規日期。")); "");
 @If(@Trim(studentId) = ""; @Return(@Prompt([Ok]; "必填欄位"; "請填寫學號。")); "");
-@If(@Trim(studentName) = ""; @Return(@Prompt([Ok]; "必填欄位"; "請填寫姓名。")); "");
 @If(@Trim(violationType) = ""; @Return(@Prompt([Ok]; "必填欄位"; "請選擇違規類型。")); "");
 @If(@Trim(violationLevel) = ""; @Return(@Prompt([Ok]; "必填欄位"; "請選擇違規等級。")); "");
+@Command([FileSave]);
+@Command([FileCloseWindow])</formula></code></action>
+<action title='完成處理' icon='98'><code event='click'><formula>
+FIELD processStatus := "已完成";
+FIELD handlerName := @Name([CN]; @UserName);
+FIELD handledDate := @Now;
+@Command([FileSave]);
+@Command([FileCloseWindow])</formula></code></action>
+<action title='撤銷' icon='127'><code event='click'><formula>
+FIELD processStatus := "已撤銷";
+FIELD handlerName := @Name([CN]; @UserName);
+FIELD handledDate := @Now;
 @Command([FileSave]);
 @Command([FileCloseWindow])</formula></code></action>
 <action title='取消' icon='127'><code event='click'><formula>
@@ -69,7 +80,7 @@
 <par def='11'><run><font size='11pt' name='Microsoft JhengHei' pitch='variable'
  truetype='true' familyid='20' color='#64748b'/></run><run><font size='11pt'
  color='#00201f' name='Microsoft JhengHei' pitch='variable' truetype='true'
- familyid='20'/><field type='text' kind='editable' name='violationNo'/></run><compositedata
+ familyid='20'/><field type='text' kind='computedwhencomposed' name='violationNo'><code event='defaultvalue'><formula>"VIO" + @Text(@Year(@Now)) + @Right("0" + @Text(@Month(@Now)); 2) + @Right("0" + @Text(@Day(@Now)); 2) + "-" + @Right("0" + @Text(@Hour(@Now)); 2) + @Right("0" + @Text(@Minute(@Now)); 2) + @Right("0" + @Text(@Second(@Now)); 2)</formula></code></field></run><compositedata
  type='98' prevtype='65418' nexttype='222' afterparcount='10' containertype='65418'
  aftercontainercount='1' afterbegincount='3'>
 Yg4BAIQAAAAAAAAAAAA=
@@ -104,18 +115,18 @@ Yg4BAIQAAAAAAAAAAAA=
  pitch='variable' truetype='true' familyid='20' color='#334155'/>宿舍棟別</run></par></tablecell>
 <tablecell valign='center' bgcolor='white'>
 <par def='13'><run><font size='11pt' color='#00201f' name='Microsoft JhengHei'
- pitch='variable' truetype='true' familyid='20'/><field borderstyle='inset'
- lookupeachchar='false' lookupaddressonrefresh='false' type='keyword' kind='editable'
- name='buildingName'><keywords columns='1'><textlist><text>A棟</text><text
->B棟</text><text>C棟</text><text>女生宿舍</text><text>研究生宿舍</text><text>不指定</text></textlist></keywords></field></run></par></tablecell></tablerow>
+ pitch='variable' truetype='true' familyid='20'/><field type='text' kind='computed'
+ name='buildingName'><code event='defaultvalue'><formula>tmp := @DbLookup("" : "NoCache"; ""; "VStudentLookup"; studentId; "assignedBuilding");
+@If(@IsError(tmp); ""; tmp)</formula></code></field></run></par></tablecell></tablerow>
 <tablerow>
 <tablecell valign='center' bgcolor='#f1f5f9'>
 <par def='10'><run><font size='11pt' style='bold' name='Microsoft JhengHei'
  pitch='variable' truetype='true' familyid='20' color='#334155'/>房號</run></par></tablecell>
 <tablecell valign='center' bgcolor='white'>
 <par def='11'><run><font size='11pt' color='#00201f' name='Microsoft JhengHei'
- pitch='variable' truetype='true' familyid='20'/><field type='text' kind='editable'
- name='roomNumber'/></run><compositedata type='98' prevtype='65418' nexttype='222'
+ pitch='variable' truetype='true' familyid='20'/><field type='text' kind='computed'
+ name='roomNumber'><code event='defaultvalue'><formula>tmp := @DbLookup("" : "NoCache"; ""; "VStudentLookup"; studentId; "assignedRoom");
+@If(@IsError(tmp); ""; tmp)</formula></code></field></run><compositedata type='98' prevtype='65418' nexttype='222'
  afterparcount='6' containertype='65418' aftercontainercount='1' afterbegincount='3'>
 Yg4BAIQAAAAAAAAAAAA=
 </compositedata></par></tablecell>
@@ -151,7 +162,9 @@ Yg4BAIQAAAAAAAAAAAA=
 <tablecell valign='center' bgcolor='white'>
 <par def='11'><run><font size='11pt' color='#00201f' name='Microsoft JhengHei'
  pitch='variable' truetype='true' familyid='20'/><field type='text' kind='editable'
- name='studentId'><code event='inputtranslation'><formula>@Trim(@UpperCase(@ThisValue))</formula></code></field></run><compositedata
+ name='studentId'><code event='inputtranslation'><formula>@Trim(@UpperCase(@ThisValue))</formula></code><code event='inputvalidation'><formula>@If(@Trim(studentId) = ""; @Failure("請輸入學號");
+    @IsError(@DbLookup("" : "NoCache"; ""; "VStudentLookup"; studentId; "studentName")); @Failure("查無此住宿學生（須為已核准住宿者）");
+    @Success)</formula></code></field></run><compositedata
  type='98' prevtype='65418' nexttype='222' afterparcount='6' containertype='65418'
  aftercontainercount='1' afterbegincount='3'>
 Yg4BAIQAAAAAAAAAAAA=
@@ -163,8 +176,9 @@ Yg4BAIQAAAAAAAAAAAA=
  truetype='true' familyid='20' color='#dc2626'/>*</run></par></tablecell>
 <tablecell valign='center' bgcolor='white'>
 <par def='13'><run><font size='11pt' color='#00201f' name='Microsoft JhengHei'
- pitch='variable' truetype='true' familyid='20'/><field type='text' kind='editable'
- name='studentName'/></run><compositedata type='98' prevtype='65418' nexttype='222'
+ pitch='variable' truetype='true' familyid='20'/><field type='text' kind='computed'
+ name='studentName'><code event='defaultvalue'><formula>tmp := @DbLookup("" : "NoCache"; ""; "VStudentLookup"; studentId; "studentName");
+@If(@IsError(tmp); ""; tmp)</formula></code></field></run><compositedata type='98' prevtype='65418' nexttype='222'
  afterparcount='6' containertype='65418' aftercontainercount='1' afterbegincount='3'>
 Yg4BAIQAAAAAAAAAAAA=
 </compositedata></par></tablecell></tablerow>
@@ -174,8 +188,9 @@ Yg4BAIQAAAAAAAAAAAA=
  pitch='variable' truetype='true' familyid='20' color='#334155'/>系級 / 班級</run></par></tablecell>
 <tablecell valign='center' bgcolor='white'>
 <par def='11'><run><font size='11pt' color='#00201f' name='Microsoft JhengHei'
- pitch='variable' truetype='true' familyid='20'/><field type='text' kind='editable'
- name='departmentClass'/></run><compositedata type='98' prevtype='65418' nexttype='222'
+ pitch='variable' truetype='true' familyid='20'/><field type='text' kind='computed'
+ name='departmentClass'><code event='defaultvalue'><formula>tmp := @DbLookup("" : "NoCache"; ""; "VStudentLookup"; studentId; "departmentClass");
+@If(@IsError(tmp); ""; tmp)</formula></code></field></run><compositedata type='98' prevtype='65418' nexttype='222'
  afterparcount='6' containertype='65418' aftercontainercount='1' afterbegincount='3'>
 Yg4BAIQAAAAAAAAAAAA=
 </compositedata></par></tablecell>

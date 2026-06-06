@@ -87,6 +87,18 @@
 <tablerow>
 <tablecell valign='center' bgcolor='#f8fafc'>
 <par def='10'><run><font size='11pt' style='bold' name='Microsoft JhengHei'
+ pitch='variable' truetype='true' familyid='20' color='#334155'/>棟別</run><run
+><font size='11pt' style='bold' name='Microsoft JhengHei' pitch='variable'
+ truetype='true' familyid='20' color='#dc2626'/>*</run></par></tablecell>
+<tablecell columnspan='3' bgcolor='white'>
+<par def='11'><run><font size='11pt' color='#00201f' name='Microsoft JhengHei'
+ pitch='variable' truetype='true' familyid='20'/><field borderstyle='inset'
+ lookupeachchar='false' lookupaddressonrefresh='false' type='keyword' kind='editable'
+ name='buildingName'><keywords columns='1'><textlist><text>A棟</text><text
+>B棟</text><text>C棟</text><text>女生宿舍</text><text>研究生宿舍</text></textlist></keywords></field></run></par></tablecell></tablerow>
+<tablerow>
+<tablecell valign='center' bgcolor='#f8fafc'>
+<par def='10'><run><font size='11pt' style='bold' name='Microsoft JhengHei'
  pitch='variable' truetype='true' familyid='20' color='#334155'/>房號</run><run
 ><font size='11pt' style='bold' name='Microsoft JhengHei' pitch='variable'
  truetype='true' familyid='20' color='#dc2626'/>*</run></par></tablecell>
@@ -107,6 +119,16 @@ Yg4BAIQAAAAAAAAAAAA=
  afterparcount='6' containertype='65418' aftercontainercount='1' afterbegincount='3'>
 Yg4BAIQAAAAAAAAAAAA=
 </compositedata></par></tablecell></tablerow>
+<tablerow>
+<tablecell valign='center' bgcolor='#f1f5f9'>
+<par def='10'><run><font size='11pt' style='bold' name='Microsoft JhengHei'
+ pitch='variable' truetype='true' familyid='20' color='#334155'/>房間代碼</run></par></tablecell>
+<tablecell columnspan='3' bgcolor='white'>
+<par def='11'><run><font size='9pt' name='Microsoft JhengHei' pitch='variable'
+ truetype='true' familyid='20' color='#37605e'/>系統自動產生（棟別/房號），作為跨表關聯鍵。</run></par>
+<par def='11'><run><font size='11pt' color='#00201f' name='Microsoft JhengHei'
+ pitch='variable' truetype='true' familyid='20'/><field type='text' kind='computed'
+ name='roomKey'><code event='defaultvalue'><formula>buildingName + "/" + @Text(room_number)</formula></code></field></run></par></tablecell></tablerow>
 <tablerow>
 <tablecell valign='center' bgcolor='#f1f5f9'>
 <par def='10'><run><font size='11pt' style='bold' name='Microsoft JhengHei'
@@ -162,17 +184,21 @@ Yg4BAIQAAAAAAAAAAAA=
  pitch='variable' truetype='true' familyid='20' color='#334155'/>目前入住人數</run></par></tablecell>
 <tablecell valign='center' bgcolor='white'>
 <par def='11'><run><font size='11pt' color='#00201f' name='Microsoft JhengHei'
- pitch='variable' truetype='true' familyid='20'/><field type='number' kind='editable'
+ pitch='variable' truetype='true' familyid='20'/><field type='number' kind='computed'
  name='current_occupancy'><numberformat format='general' punctuated='false'
- parens='false' percent='false' bytes='false'/></field></run></par></tablecell>
+ parens='false' percent='false' bytes='false'/><code event='defaultvalue'><formula>beds := @DbLookup("" : "NoCache"; ""; "VApprovedByRoom"; roomKey; "studentId");
+@If(@IsError(beds); 0; @Elements(beds))</formula></code></field></run></par></tablecell>
 <tablecell valign='center' bgcolor='#f8fafc'>
 <par def='12'><run><font size='11pt' style='bold' name='Microsoft JhengHei'
  pitch='variable' truetype='true' familyid='20' color='#334155'/>剩餘床位數</run></par></tablecell>
 <tablecell valign='center' bgcolor='white'>
 <par def='13'><run><font size='11pt' color='#00201f' name='Microsoft JhengHei'
- pitch='variable' truetype='true' familyid='20'/><field type='number' kind='editable'
+ pitch='variable' truetype='true' familyid='20'/><field type='number' kind='computed'
  name='available_beds'><numberformat format='general' punctuated='false' parens='false'
- percent='false' bytes='false'/></field></run></par></tablecell></tablerow>
+ percent='false' bytes='false'/><code event='defaultvalue'><formula>beds := @DbLookup("" : "NoCache"; ""; "VApprovedByRoom"; roomKey; "studentId");
+occ := @If(@IsError(beds); 0; @Elements(beds));
+cap := @If(@Trim(@Text(capacity)) = ""; 0; @TextToNumber(@Text(capacity)));
+@Max(0; cap - occ)</formula></code></field></run></par></tablecell></tablerow>
 <tablerow>
 <tablecell valign='center' bgcolor='#f1f5f9'>
 <par def='10'><run><font size='11pt' style='bold' name='Microsoft JhengHei'

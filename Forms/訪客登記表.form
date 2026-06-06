@@ -17,11 +17,29 @@
 @If(@Trim(visitorName) = ""; @Return(@Prompt([Ok]; "必填欄位"; "請填寫訪客姓名。")); "");
 @If(@Trim(visitorGender) = ""; @Return(@Prompt([Ok]; "必填欄位"; "請選擇訪客性別。")); "");
 @If(@Trim(studentId) = ""; @Return(@Prompt([Ok]; "必填欄位"; "請填寫被訪學生學號。")); "");
-@If(@Trim(studentName) = ""; @Return(@Prompt([Ok]; "必填欄位"; "請填寫被訪學生姓名。")); "");
 @If(@Trim(visitDate) = ""; @Return(@Prompt([Ok]; "必填欄位"; "請填寫來訪日期。")); "");
 @If(@Trim(visitReason) = ""; @Return(@Prompt([Ok]; "必填欄位"; "請填寫來訪原因。")); "");
 @Command([FileSave]);
 @Command([FileCloseWindow])</formula></code></action>
+<action title='核准' icon='98'><code event='click'><formula>
+FIELD visitStatus := "已核准";
+FIELD approvedBy := @Name([CN]; @UserName);
+FIELD approvedAt := @Now;
+@Command([FileSave]);
+@Command([FileCloseWindow])</formula></code></action>
+<action title='拒絕' icon='127'><code event='click'><formula>
+FIELD visitStatus := "拒絕";
+FIELD approvedBy := @Name([CN]; @UserName);
+FIELD approvedAt := @Now;
+@Command([FileSave]);
+@Command([FileCloseWindow])</formula></code></action>
+<action title='進入登記' icon='134'><code event='click'><formula>
+FIELD checkInTime := @Now;
+@Command([FileSave])</formula></code></action>
+<action title='離開登記' icon='135'><code event='click'><formula>
+FIELD checkOutTime := @Now;
+FIELD visitStatus := "已離開";
+@Command([FileSave])</formula></code></action>
 <action title='取消' icon='127'><code event='click'><formula>
 @Command([FileCloseWindow])</formula></code></action></actionbar>
 <body><richtext>
@@ -70,7 +88,7 @@
 <par def='11'><run><font size='11pt' name='Microsoft JhengHei' pitch='variable'
  truetype='true' familyid='20' color='#64748b'/></run><run><font size='11pt'
  color='#00201f' name='Microsoft JhengHei' pitch='variable' truetype='true'
- familyid='20'/><field type='text' kind='editable' name='visitorNo'/></run><compositedata
+ familyid='20'/><field type='text' kind='computedwhencomposed' name='visitorNo'><code event='defaultvalue'><formula>"V" + @Text(@Year(@Now)) + @Right("0" + @Text(@Month(@Now)); 2) + @Right("0" + @Text(@Day(@Now)); 2) + "-" + @Right("0" + @Text(@Hour(@Now)); 2) + @Right("0" + @Text(@Minute(@Now)); 2) + @Right("0" + @Text(@Second(@Now)); 2)</formula></code></field></run><compositedata
  type='98' prevtype='65418' nexttype='222' afterparcount='10' containertype='65418'
  aftercontainercount='1' afterbegincount='3'>
 Yg4BAIQAAAAAAAAAAAA=
@@ -153,7 +171,9 @@ Yg4BAIQAAAAAAAAAAAA=
 <tablecell valign='center' bgcolor='white'>
 <par def='11'><run><font size='11pt' color='#00201f' name='Microsoft JhengHei'
  pitch='variable' truetype='true' familyid='20'/><field type='text' kind='editable'
- name='studentId'><code event='inputtranslation'><formula>@Trim(@UpperCase(@ThisValue))</formula></code></field></run><compositedata
+ name='studentId'><code event='inputtranslation'><formula>@Trim(@UpperCase(@ThisValue))</formula></code><code event='inputvalidation'><formula>@If(@Trim(studentId) = ""; @Failure("請輸入被訪學生學號");
+    @IsError(@DbLookup("" : "NoCache"; ""; "VStudentLookup"; studentId; "studentName")); @Failure("查無此住宿學生（須為已核准住宿者）");
+    @Success)</formula></code></field></run><compositedata
  type='98' prevtype='65418' nexttype='222' afterparcount='6' containertype='65418'
  aftercontainercount='1' afterbegincount='3'>
 Yg4BAIQAAAAAAAAAAAA=
@@ -165,8 +185,9 @@ Yg4BAIQAAAAAAAAAAAA=
  truetype='true' familyid='20' color='#dc2626'/>*</run></par></tablecell>
 <tablecell valign='center' bgcolor='white'>
 <par def='13'><run><font size='11pt' color='#00201f' name='Microsoft JhengHei'
- pitch='variable' truetype='true' familyid='20'/><field type='text' kind='editable'
- name='studentName'/></run><compositedata type='98' prevtype='65418' nexttype='222'
+ pitch='variable' truetype='true' familyid='20'/><field type='text' kind='computed'
+ name='studentName'><code event='defaultvalue'><formula>tmp := @DbLookup("" : "NoCache"; ""; "VStudentLookup"; studentId; "studentName");
+@If(@IsError(tmp); ""; tmp)</formula></code></field></run><compositedata type='98' prevtype='65418' nexttype='222'
  afterparcount='6' containertype='65418' aftercontainercount='1' afterbegincount='3'>
 Yg4BAIQAAAAAAAAAAAA=
 </compositedata></par></tablecell></tablerow>
@@ -176,8 +197,9 @@ Yg4BAIQAAAAAAAAAAAA=
  pitch='variable' truetype='true' familyid='20' color='#334155'/>系級 / 班級</run></par></tablecell>
 <tablecell valign='center' bgcolor='white'>
 <par def='11'><run><font size='11pt' color='#00201f' name='Microsoft JhengHei'
- pitch='variable' truetype='true' familyid='20'/><field type='text' kind='editable'
- name='departmentClass'/></run><compositedata type='98' prevtype='65418' nexttype='222'
+ pitch='variable' truetype='true' familyid='20'/><field type='text' kind='computed'
+ name='departmentClass'><code event='defaultvalue'><formula>tmp := @DbLookup("" : "NoCache"; ""; "VStudentLookup"; studentId; "departmentClass");
+@If(@IsError(tmp); ""; tmp)</formula></code></field></run><compositedata type='98' prevtype='65418' nexttype='222'
  afterparcount='6' containertype='65418' aftercontainercount='1' afterbegincount='3'>
 Yg4BAIQAAAAAAAAAAAA=
 </compositedata></par></tablecell>
@@ -186,18 +208,18 @@ Yg4BAIQAAAAAAAAAAAA=
  pitch='variable' truetype='true' familyid='20' color='#334155'/>宿舍棟別</run></par></tablecell>
 <tablecell valign='center' bgcolor='white'>
 <par def='13'><run><font size='11pt' color='#00201f' name='Microsoft JhengHei'
- pitch='variable' truetype='true' familyid='20'/><field borderstyle='inset'
- lookupeachchar='false' lookupaddressonrefresh='false' type='keyword' kind='editable'
- name='buildingName'><keywords columns='1'><textlist><text>A棟</text><text
->B棟</text><text>C棟</text><text>女生宿舍</text><text>研究生宿舍</text></textlist></keywords></field></run></par></tablecell></tablerow>
+ pitch='variable' truetype='true' familyid='20'/><field type='text' kind='computed'
+ name='buildingName'><code event='defaultvalue'><formula>tmp := @DbLookup("" : "NoCache"; ""; "VStudentLookup"; studentId; "assignedBuilding");
+@If(@IsError(tmp); ""; tmp)</formula></code></field></run></par></tablecell></tablerow>
 <tablerow>
 <tablecell valign='center' bgcolor='#f1f5f9'>
 <par def='10'><run><font size='11pt' style='bold' name='Microsoft JhengHei'
  pitch='variable' truetype='true' familyid='20' color='#334155'/>房號</run></par></tablecell>
 <tablecell valign='center' bgcolor='white'>
 <par def='11'><run><font size='11pt' color='#00201f' name='Microsoft JhengHei'
- pitch='variable' truetype='true' familyid='20'/><field type='text' kind='editable'
- name='roomNumber'/></run><compositedata type='98' prevtype='65418' nexttype='222'
+ pitch='variable' truetype='true' familyid='20'/><field type='text' kind='computed'
+ name='roomNumber'><code event='defaultvalue'><formula>tmp := @DbLookup("" : "NoCache"; ""; "VStudentLookup"; studentId; "assignedRoom");
+@If(@IsError(tmp); ""; tmp)</formula></code></field></run><compositedata type='98' prevtype='65418' nexttype='222'
  afterparcount='6' containertype='65418' aftercontainercount='1' afterbegincount='3'>
 Yg4BAIQAAAAAAAAAAAA=
 </compositedata></par></tablecell>
@@ -242,22 +264,22 @@ Yg4BAIQAAAAAAAAAAAA=
  pitch='variable' truetype='true' familyid='20' color='#334155'/>進入時間</run></par></tablecell>
 <tablecell valign='center' bgcolor='white'>
 <par def='13'><run><font size='11pt' color='#00201f' name='Microsoft JhengHei'
- pitch='variable' truetype='true' familyid='20'/><field type='text' kind='editable'
- name='checkInTime'/></run><compositedata type='98' prevtype='65418' nexttype='222'
- afterparcount='6' containertype='65418' aftercontainercount='1' afterbegincount='3'>
-Yg4BAIQAAAAAAAAAAAA=
-</compositedata></par></tablecell></tablerow>
+ pitch='variable' truetype='true' familyid='20'/><field type='datetime' kind='editable' name='checkInTime'><datetimeformat
+ show='datetime' date='yearmonthday' fourdigityearfor21stcentury='true' time='hourminute'
+ zone='never' dateformat='yearmonthdayweekday' dayformat='twodigitday' monthformat='twodigitmonth'
+ yearformat='fourdigityear' weekdayformat='shortname' dateseparator1='/' dateseparator2='/'
+ dateseparator3=' ' timeseparator=':' preference='usersetting'/></field></run></par></tablecell></tablerow>
 <tablerow>
 <tablecell valign='center' bgcolor='#f8fafc'>
 <par def='10'><run><font size='11pt' style='bold' name='Microsoft JhengHei'
  pitch='variable' truetype='true' familyid='20' color='#334155'/>離開時間</run></par></tablecell>
 <tablecell valign='center' bgcolor='white'>
 <par def='11'><run><font size='11pt' color='#00201f' name='Microsoft JhengHei'
- pitch='variable' truetype='true' familyid='20'/><field type='text' kind='editable'
- name='checkOutTime'/></run><compositedata type='98' prevtype='65418' nexttype='222'
- afterparcount='6' containertype='65418' aftercontainercount='1' afterbegincount='3'>
-Yg4BAIQAAAAAAAAAAAA=
-</compositedata></par></tablecell>
+ pitch='variable' truetype='true' familyid='20'/><field type='datetime' kind='editable' name='checkOutTime'><datetimeformat
+ show='datetime' date='yearmonthday' fourdigityearfor21stcentury='true' time='hourminute'
+ zone='never' dateformat='yearmonthdayweekday' dayformat='twodigitday' monthformat='twodigitmonth'
+ yearformat='fourdigityear' weekdayformat='shortname' dateseparator1='/' dateseparator2='/'
+ dateseparator3=' ' timeseparator=':' preference='usersetting'/></field></run></par></tablecell>
 <tablecell valign='center' bgcolor='#f8fafc'>
 <par def='12'><run><font size='11pt' style='bold' name='Microsoft JhengHei'
  pitch='variable' truetype='true' familyid='20' color='#334155'/>是否過夜</run></par></tablecell>

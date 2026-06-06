@@ -22,10 +22,7 @@
 <actionbuttonstyle bgcolor='#16a34a'/><font size='9pt' color='white'/><border
  style='solid' width='0px 0px 1px' color='system'/>
 <action title='新登記' icon='105'><code event='click'><formula>@Command([Compose]; "FVisitor")</formula></code></action>
-<action title='進入登記' icon='7'><code event='click'><formula>@Command([EditDocument]); @SetField("checkInTime"; @Text(@Now; "T2"))</formula></code></action>
-<action title='離開登記' icon='127'><code event='click'><formula>@Command([EditDocument]); @SetField("checkOutTime"; @Text(@Now; "T2"))</formula></code></action>
-<action title='標記離開' icon='98'><code event='click'><formula>@Command([EditDocument]); @SetField("visitStatus"; "已離開")</formula></code></action>
-<action title='檢視詳情' icon='91'><code event='click'><formula>@Command([EditDocument])</formula></code></action></actionbar>
+<action title='檢視/進出登記' icon='91'><code event='click'><formula>@Command([EditDocument])</formula></code></action></actionbar>
 <column sort='ascending' hidedetailrows='false' itemname='checkInTime' width='10'
  resizable='true' separatemultiplevalues='false' sortnoaccent='false' sortnocase='false'
  showaslinks='false'><columnheader title='進入時間'><font size='9pt' color='white'
