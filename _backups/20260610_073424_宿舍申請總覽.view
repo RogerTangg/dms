@@ -1,6 +1,6 @@
 <?xml version='1.0' encoding='utf-8'?>
 <view name='宿舍申請總覽' alias='VDormApp' xmlns='http://www.lotus.com/dxl' version='12.0'
- maintenanceversion='2.2' replicaid='48258DF7002468B3' showinmenu='false' default='true'
+ maintenanceversion='2.2' replicaid='48258DF7002468B3' showinmenu='false'
  noreplace='true' publicaccess='false' designerversion='8.5.3' unreadmarks='none'
  onopengoto='lastopened' onrefresh='displayindicator' headers='simple' opencollapsed='false'
  showresponsehierarchy='true' showmargin='true' shrinkrows='false' extendlastcolumn='false'

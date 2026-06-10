@@ -1,0 +1,57 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!--
+  標準 View 範本（可讀 DXL）。含兩種常用型：
+  (A) 隱藏 lookup view —— 供 @DbLookup 帶值（第一欄即排序 key）。
+  (B) 分類 + 狀態過濾 view —— 供流程/聚合檢視。
+  套用時替換 {AppPrefix}、欄位名。為何這樣設計：references/design-patterns.md（P1、P4、P6）。
+  注意：ODP 中 $ViewFormat/$Collation 為 base64，勿手改；此處用高階 DXL 表達。
+-->
+
+<!-- (A) 隱藏 lookup view：第一欄 = key（升冪、排序），後續欄供 @DbLookup 回傳 -->
+<view xmlns='http://www.lotus.com/dxl'
+      name='V{AppPrefix}03 主檔\依Key:V{AppPrefix}03|V{AppPrefix}03'
+      hide='true'>
+  <code event='selection'><formula>SELECT form = "F{AppPrefix}01"</formula></code>
+  <column itemname='keyField' sort='ascending' width='10'>
+    <columnheader title='Key'/>
+    <code event='value'><formula>keyField</formula></code>
+  </column>
+  <column itemname='displayName' width='16'>
+    <columnheader title='Name'/>
+    <code event='value'><formula>displayName</formula></code>
+  </column>
+  <column itemname='extraField' width='12'>
+    <columnheader title='Extra'/>
+    <code event='value'><formula>extraField</formula></code>
+  </column>
+</view>
+
+<!-- (B) 「未審核」清單：依日期排序、依狀態過濾（修正常見的選擇公式不符缺陷） -->
+<view xmlns='http://www.lotus.com/dxl'
+      name='V{AppPrefix}50 待審清單|V{AppPrefix}50'>
+  <!-- 關鍵：SELECT 必須對應正確 Form 與狀態，勿沿用主檔的 form 條件 -->
+  <code event='selection'><formula>
+    SELECT form = "F{AppPrefix}05" & processStatus = "待審核"
+  </formula></code>
+
+  <!-- 分類欄（categorized）：依申請日期聚合 -->
+  <column itemname='applyDate' sort='descending' categorized='true' width='12'>
+    <columnheader title='申請日'/>
+    <code event='value'><formula>applyDate</formula></code>
+  </column>
+  <column itemname='displayName' width='16'>
+    <columnheader title='申請人'/>
+    <code event='value'><formula>displayName</formula></code>
+  </column>
+  <column itemname='processStatus' width='10'>
+    <columnheader title='狀態'/>
+    <code event='value'><formula>processStatus</formula></code>
+  </column>
+
+  <!-- View Action：建立新申請單 -->
+  <actionbar>
+    <action title='新增申請'>
+      <code event='click'><formula>@Command([Compose]; "F{AppPrefix}05")</formula></code>
+    </action>
+  </actionbar>
+</view>

@@ -1,0 +1,197 @@
+<?xml version='1.0' encoding='utf-8'?>
+<page name='系統首頁' alias='PHome' xmlns='http://www.lotus.com/dxl' version='12.0'
+ maintenanceversion='2.2' replicaid='48258DF7002468B3' publicaccess='false'
+ designerversion='8.5.3'>
+<updatedby><name>CN=B11109006/O=XRedSchool</name></updatedby>
+<wassignedby><name>CN=B11109006/O=XRedSchool</name></wassignedby>
+<actionbar bgcolor='#2563eb' bordercolor='#1d4ed8'>
+<actionbuttonstyle bgcolor='#2563eb'/><font size='9pt' color='white'/><border
+ style='solid' width='0px 0px 1px' color='system'/>
+<action title='房間資料'><code event='click'><formula>@SetTargetFrame("Content");
+@Command([OpenView]; "VRoom")</formula></code></action>
+<action title='宿舍申請'><code event='click'><formula>@SetTargetFrame("Content");
+@Command([OpenView]; "VDormApp")</formula></code></action>
+<action title='訪客登記'><code event='click'><formula>@SetTargetFrame("Content");
+@Command([OpenView]; "VFVisitor")</formula></code></action>
+<action title='違規記錄'><code event='click'><formula>@SetTargetFrame("Content");
+@Command([OpenView]; "VFViolation")</formula></code></action></actionbar>
+<body><richtext>
+<pardef id='1' align='center'/>
+<par def='1'/>
+<table leftmargin='0' widthtype='fixedcenter' refwidth='7.5000in'><tablecolumn width='7.5000in'/>
+<tablerow>
+<tablecell bgcolor='#eff6ff'>
+<pardef id='2' align='center' spacebefore='4' keepwithnext='true' keeptogether='true'/>
+<par def='2'><run><font size='26pt' style='bold' name='Microsoft JhengHei'
+ pitch='variable' truetype='true' familyid='20' color='#1d4ed8'/>宿舍資訊系統</run></par>
+<pardef id='3' align='center' keepwithnext='true' keeptogether='true'/>
+<par def='3'><run><font size='13pt' name='Microsoft JhengHei' pitch='variable'
+ truetype='true' familyid='20' color='#64748b'/>Dormitory Management Information System</run></par>
+<pardef id='4' align='center' spaceafter='4'/>
+<par def='4'><run><font size='11pt' name='Microsoft JhengHei' pitch='variable'
+ truetype='true' familyid='20' color='#334155'/>整合 房間、申請、訪客、違規 四大模組的一站式宿舍管理平台。請點選上方按鈕進入各功能模組。</run></par></tablecell></tablerow></table>
+<pardef id='5' align='center'/>
+<par def='5'/>
+<table cellbordercolor='#dbeafe' leftmargin='0' widthtype='fixedcenter' refwidth='7.5000in'><tablecolumn
+ width='7.5000in'/>
+<tablerow>
+<tablecell valign='center' bgcolor='#1d4ed8'>
+<pardef id='8' leftmargin='0.1500in' keepwithnext='true' keeptogether='true'/>
+<par def='8'><run><font size='13pt' style='bold' name='Microsoft JhengHei'
+ pitch='variable' truetype='true' familyid='20' color='white'/>一、系統簡介</run></par></tablecell></tablerow></table>
+<pardef id='9' leftmargin='0.1500in' rightmargin='0.1500in' spacebefore='2' spaceafter='2'/>
+<par def='9'><run><font size='11pt' name='Microsoft JhengHei' pitch='variable'
+ truetype='true' familyid='20' color='#334155'/>本系統以 HCL Domino 文件型資料庫建置，協助宿舍管理單位完成房間建檔、學生申請與審核分配、訪客出入登記、違規記錄與處分等日常作業。各模組以學號與房號相互連動，資料一處維護、跨表即時帶出。</run></par>
+<par def='5'/>
+<table cellbordercolor='#dbeafe' leftmargin='0' widthtype='fixedcenter' refwidth='7.5000in'><tablecolumn
+ width='7.5000in'/>
+<tablerow>
+<tablecell valign='center' bgcolor='#1d4ed8'>
+<par def='8'><run><font size='13pt' style='bold' name='Microsoft JhengHei'
+ pitch='variable' truetype='true' familyid='20' color='white'/>二、功能模組</run></par></tablecell></tablerow></table>
+<par def='5'/>
+<table cellbordercolor='#cbd5e1' leftmargin='0' widthtype='fixedcenter' refwidth='7.5000in'><border
+ style='solid' width='1px' color='silver'/><tablecolumn width='1.3000in'/><tablecolumn
+ width='2.9000in'/><tablecolumn width='3.3000in'/>
+<tablerow>
+<tablecell valign='center' bgcolor='#1e40af'>
+<pardef id='10' leftmargin='0.0800in' spacebefore='1.5' spaceafter='1.5'/>
+<par def='10'><run><font size='10pt' style='bold' name='Microsoft JhengHei'
+ pitch='variable' truetype='true' familyid='20' color='white'/>模組</run></par></tablecell>
+<tablecell valign='center' bgcolor='#1e40af'>
+<par def='10'><run><font size='10pt' style='bold' name='Microsoft JhengHei'
+ pitch='variable' truetype='true' familyid='20' color='white'/>用途</run></par></tablecell>
+<tablecell valign='center' bgcolor='#1e40af'>
+<par def='10'><run><font size='10pt' style='bold' name='Microsoft JhengHei'
+ pitch='variable' truetype='true' familyid='20' color='white'/>對應視圖</run></par></tablecell></tablerow>
+<tablerow>
+<tablecell valign='center' bgcolor='#eff6ff'>
+<par def='10'><run><font size='10pt' style='bold' name='Microsoft JhengHei'
+ pitch='variable' truetype='true' familyid='20' color='#2563eb'/>房間資料</run></par></tablecell>
+<tablecell valign='center' bgcolor='white'>
+<par def='10'><run><font size='10pt' name='Microsoft JhengHei' pitch='variable'
+ truetype='true' familyid='20' color='#334155'/>房間與床位主檔，登錄容量、性別限制、費用與設備，並自動計算入住人數與剩餘床位。</run></par></tablecell>
+<tablecell valign='center' bgcolor='white'>
+<par def='10'><run><font size='10pt' name='Microsoft JhengHei' pitch='variable'
+ truetype='true' familyid='20' color='#475569'/>VRoom、VRoomAvailable</run></par></tablecell></tablerow>
+<tablerow>
+<tablecell valign='center' bgcolor='#f0fdf4'>
+<par def='10'><run><font size='10pt' style='bold' name='Microsoft JhengHei'
+ pitch='variable' truetype='true' familyid='20' color='#16a34a'/>宿舍申請</run></par></tablecell>
+<tablecell valign='center' bgcolor='white'>
+<par def='10'><run><font size='10pt' name='Microsoft JhengHei' pitch='variable'
+ truetype='true' familyid='20' color='#334155'/>學生線上申請住宿，承辦人審核、分配房間與床位，狀態由待審核推進至已核准。</run></par></tablecell>
+<tablecell valign='center' bgcolor='white'>
+<par def='10'><run><font size='10pt' name='Microsoft JhengHei' pitch='variable'
+ truetype='true' familyid='20' color='#475569'/>VDormApp、VDormApp_Pending、VDormApp_Approved</run></par></tablecell></tablerow>
+<tablerow>
+<tablecell valign='center' bgcolor='#fffbeb'>
+<par def='10'><run><font size='10pt' style='bold' name='Microsoft JhengHei'
+ pitch='variable' truetype='true' familyid='20' color='#d97706'/>訪客登記</run></par></tablecell>
+<tablecell valign='center' bgcolor='white'>
+<par def='10'><run><font size='10pt' name='Microsoft JhengHei' pitch='variable'
+ truetype='true' familyid='20' color='#334155'/>來訪者登記、被訪學生自動帶出，承辦人核准或拒絕，記錄進入與離開時間。</run></par></tablecell>
+<tablecell valign='center' bgcolor='white'>
+<par def='10'><run><font size='10pt' name='Microsoft JhengHei' pitch='variable'
+ truetype='true' familyid='20' color='#475569'/>VFVisitor、VFVisitor_Today、VFVisitor_Pending</run></par></tablecell></tablerow>
+<tablerow>
+<tablecell valign='center' bgcolor='#fef2f2'>
+<par def='10'><run><font size='10pt' style='bold' name='Microsoft JhengHei'
+ pitch='variable' truetype='true' familyid='20' color='#dc2626'/>違規記錄</run></par></tablecell>
+<tablecell valign='center' bgcolor='white'>
+<par def='10'><run><font size='10pt' name='Microsoft JhengHei' pitch='variable'
+ truetype='true' familyid='20' color='#334155'/>登錄違規事件、等級與地點，承辦人處分、記點，狀態由待處理推進至已完成。</run></par></tablecell>
+<tablecell valign='center' bgcolor='white'>
+<par def='10'><run><font size='10pt' name='Microsoft JhengHei' pitch='variable'
+ truetype='true' familyid='20' color='#475569'/>VFViolation、VFViolation_Pending、VFViolation_Handled</run></par></tablecell></tablerow></table>
+<par def='5'/>
+<table cellbordercolor='#dbeafe' leftmargin='0' widthtype='fixedcenter' refwidth='7.5000in'><tablecolumn
+ width='7.5000in'/>
+<tablerow>
+<tablecell valign='center' bgcolor='#1d4ed8'>
+<par def='8'><run><font size='13pt' style='bold' name='Microsoft JhengHei'
+ pitch='variable' truetype='true' familyid='20' color='white'/>三、系統架構（資料關聯）</run></par></tablecell></tablerow></table>
+<par def='5'/>
+<table cellbordercolor='#cbd5e1' leftmargin='0' widthtype='fixedcenter' refwidth='7.5000in'><border
+ style='solid' width='1px' color='silver'/><tablecolumn width='7.5000in'/>
+<tablerow>
+<tablecell bgcolor='#f8fafc'>
+<pardef id='11' leftmargin='0.1500in' rightmargin='0.1500in' spacebefore='2' spaceafter='2'/>
+<par def='11'><run><font size='10pt' name='Microsoft JhengHei' pitch='variable'
+ truetype='true' familyid='20' color='#0f172a'/>本系統採用主檔加隱藏 Lookup 視圖加 @DbLookup 的鬆耦合設計，文件之間以邏輯鍵連動，無實體父子鏈：</run></par>
+<pardef id='12' leftmargin='0.2500in' rightmargin='0.1500in' spaceafter='1'/>
+<par def='12'><run><font size='10pt' style='bold' name='Microsoft JhengHei'
+ pitch='variable' truetype='true' familyid='20' color='#16a34a'/>一、學號連動：</run><run><font
+ size='10pt' name='Microsoft JhengHei' pitch='variable' truetype='true' familyid='20'
+ color='#334155'/>已核准申請以學號為鍵，經 VStudentLookup 自動帶出姓名、系級、宿舍、房號到訪客與違規表。</run></par>
+<par def='12'><run><font size='10pt' style='bold' name='Microsoft JhengHei'
+ pitch='variable' truetype='true' familyid='20' color='#2563eb'/>二、房號連動：</run><run><font
+ size='10pt' name='Microsoft JhengHei' pitch='variable' truetype='true' familyid='20'
+ color='#334155'/>房間的 roomKey 與申請的 assignedRoom 對應，經 VApprovedByRoom 計算入住人數與剩餘床位。</run></par>
+<par def='12'><run><font size='10pt' style='bold' name='Microsoft JhengHei'
+ pitch='variable' truetype='true' familyid='20' color='#d97706'/>三、即時一致：</run><run><font
+ size='10pt' name='Microsoft JhengHei' pitch='variable' truetype='true' familyid='20'
+ color='#334155'/>所有跨表查詢皆加上 NoCache，主檔一更新即時反映，不取舊值。</run></par></tablecell></tablerow></table>
+<par def='5'/>
+<table cellbordercolor='#dbeafe' leftmargin='0' widthtype='fixedcenter' refwidth='7.5000in'><tablecolumn
+ width='7.5000in'/>
+<tablerow>
+<tablecell valign='center' bgcolor='#1d4ed8'>
+<par def='8'><run><font size='13pt' style='bold' name='Microsoft JhengHei'
+ pitch='variable' truetype='true' familyid='20' color='white'/>四、操作指南</run></par></tablecell></tablerow></table>
+<par def='5'/>
+<table cellbordercolor='#cbd5e1' leftmargin='0' widthtype='fixedcenter' refwidth='7.5000in'><border
+ style='solid' width='1px' color='silver'/><tablecolumn width='3.7500in'/><tablecolumn
+ width='3.7500in'/>
+<tablerow>
+<tablecell valign='top' bgcolor='#f0fdf4'>
+<pardef id='13' leftmargin='0.1000in' rightmargin='0.0800in' spacebefore='2' spaceafter='2' keepwithnext='true'/>
+<par def='13'><run><font size='11pt' style='bold' name='Microsoft JhengHei'
+ pitch='variable' truetype='true' familyid='20' color='#15803d'/>學生自助</run></par>
+<pardef id='14' leftmargin='0.1800in' rightmargin='0.0800in' spaceafter='1'/>
+<par def='14'><run><font size='10pt' name='Microsoft JhengHei' pitch='variable'
+ truetype='true' familyid='20' color='#334155'/>1. 於房間資料查可入住房間（VRoomAvailable），依性別限制與剩餘床位挑選。</run></par>
+<par def='14'><run><font size='10pt' name='Microsoft JhengHei' pitch='variable'
+ truetype='true' familyid='20' color='#334155'/>2. 於宿舍申請開新申請表填寫並送出，狀態為待審核。</run></par>
+<par def='14'><run><font size='10pt' name='Microsoft JhengHei' pitch='variable'
+ truetype='true' familyid='20' color='#334155'/>3. 於宿舍申請查詢個人申請進度與分配結果。</run></par>
+<par def='14'><run><font size='10pt' name='Microsoft JhengHei' pitch='variable'
+ truetype='true' familyid='20' color='#334155'/>4. 訪客來訪請至訪客登記填單，須經管理員核准；是否過夜需事先核准。</run></par></tablecell>
+<tablecell valign='top' bgcolor='#eff6ff'>
+<par def='13'><run><font size='11pt' style='bold' name='Microsoft JhengHei'
+ pitch='variable' truetype='true' familyid='20' color='#1d4ed8'/>管理作業（限宿舍承辦人）</run></par>
+<par def='14'><run><font size='10pt' name='Microsoft JhengHei' pitch='variable'
+ truetype='true' familyid='20' color='#334155'/>1. 申請審核：於宿舍申請的待審核清單開啟文件，分配房間與床位後核准，狀態轉已核准。</run></par>
+<par def='14'><run><font size='10pt' name='Microsoft JhengHei' pitch='variable'
+ truetype='true' familyid='20' color='#334155'/>2. 訪客核准：於訪客登記的待核准清單核准或拒絕，並登記進入與離開時間。</run></par>
+<par def='14'><run><font size='10pt' name='Microsoft JhengHei' pitch='variable'
+ truetype='true' familyid='20' color='#334155'/>3. 違規處理：於違規記錄的待處理清單登錄處分方式與記點後完成處理。</run></par></tablecell></tablerow></table>
+<par def='5'/>
+<table cellbordercolor='#dbeafe' leftmargin='0' widthtype='fixedcenter' refwidth='7.5000in'><tablecolumn
+ width='7.5000in'/>
+<tablerow>
+<tablecell valign='center' bgcolor='#1d4ed8'>
+<par def='8'><run><font size='13pt' style='bold' name='Microsoft JhengHei'
+ pitch='variable' truetype='true' familyid='20' color='white'/>五、狀態圖例</run></par></tablecell></tablerow></table>
+<pardef id='15' leftmargin='0.1500in' rightmargin='0.1500in' spacebefore='2' spaceafter='1'/>
+<par def='15'><run><font size='10pt' style='bold' name='Microsoft JhengHei'
+ pitch='variable' truetype='true' familyid='20' color='#2563eb'/>房間狀態：</run><run><font
+ size='10pt' name='Microsoft JhengHei' pitch='variable' truetype='true' familyid='20'
+ color='#334155'/>可入住、已滿、維修中、停用</run></par>
+<par def='15'><run><font size='10pt' style='bold' name='Microsoft JhengHei'
+ pitch='variable' truetype='true' familyid='20' color='#16a34a'/>申請狀態：</run><run><font
+ size='10pt' name='Microsoft JhengHei' pitch='variable' truetype='true' familyid='20'
+ color='#334155'/>待審核（草稿、已送出、審核中）至已核准</run></par>
+<par def='15'><run><font size='10pt' style='bold' name='Microsoft JhengHei'
+ pitch='variable' truetype='true' familyid='20' color='#d97706'/>訪客狀態：</run><run><font
+ size='10pt' name='Microsoft JhengHei' pitch='variable' truetype='true' familyid='20'
+ color='#334155'/>待核准、已核准、拒絕、已離開、已取消</run></par>
+<par def='15'><run><font size='10pt' style='bold' name='Microsoft JhengHei'
+ pitch='variable' truetype='true' familyid='20' color='#dc2626'/>違規狀態：</run><run><font
+ size='10pt' name='Microsoft JhengHei' pitch='variable' truetype='true' familyid='20'
+ color='#334155'/>待處理、處理中、已完成、申訴中、已撤銷</run></par>
+<pardef id='16' align='center' spacebefore='4' spaceafter='2'/>
+<par def='16'><run><font size='9pt' name='Microsoft JhengHei' pitch='variable'
+ truetype='true' familyid='20' color='#94a3b8'/>本系統含學生個資（姓名、地址、緊急聯絡人、證件），請依權限使用，勿外洩。　宿舍資訊系統 v1.0　HCL Domino 12.0</run></par>
+<par def='1'/></richtext></body>
+<item name='$$ScriptName' summary='false' sign='true'><text>PHome</text></item></page>

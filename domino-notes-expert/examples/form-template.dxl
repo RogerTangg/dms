@@ -1,0 +1,74 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!--
+  標準交易/紀錄 Form 範本（可讀 DXL，可經 Domino Designer / DXL Importer 匯入）。
+  示範：邏輯外鍵 keyField + @DbLookup 經 lookup view 帶值 + 輸入驗證 + 狀態欄位。
+  套用時：替換 {AppPrefix}、欄位名、lookup view 名為目標專案實際代號。
+  為何這樣設計：見 references/design-patterns.md（P1 鬆耦合）與 references/data-model.md。
+
+  注意：ODP 匯出格式中 Form 內文存於 base64 的 $Body（CD records），勿手改；
+       此處用「高階可讀 DXL」表達結構，便於閱讀與重建。
+-->
+<form xmlns='http://www.lotus.com/dxl'
+      name='F{AppPrefix}03 交易紀錄|F{AppPrefix}03'
+      type='document'>
+  <body>
+    <richtext>
+      <pardef id='1'/>
+
+      <!-- 外鍵：使用者輸入主鍵；含輸入驗證，查無資料即擋下 -->
+      <par def='1'>識別碼：
+        <field kind='editable' name='keyField' type='text'>
+          <code event='inputvalidation'><formula>
+            @If(keyField = ""; @Failure("請輸入識別碼");
+                @IsError(@DbLookup(""\:"NoCache"; ""; "V{AppPrefix}03"; keyField; "displayName"));
+                    @Failure("查無此資料，請確認識別碼");
+                @Success)
+          </formula></code>
+          <code event='inputtranslation'><formula>@Trim(keyField)</formula></code>
+        </field>
+      </par>
+
+      <!-- 帶值：Computed，主檔更新會反映（需快照請改 Computed when Composed） -->
+      <par def='1'>名稱：
+        <field kind='computed' name='displayName' type='text'>
+          <code event='value'><formula>
+            tmp := @DbLookup(""\:"NoCache"; ""; "V{AppPrefix}03"; keyField; "displayName");
+            @If(@IsError(tmp); ""; tmp)
+          </formula></code>
+        </field>
+      </par>
+
+      <!-- 交易日期：DateTime，視圖分類鍵 -->
+      <par def='1'>日期：
+        <field kind='editable' name='recordDate' type='datetime'/>
+      </par>
+
+      <!-- 狀態：建立時以 Computed when Composed 設初值，之後由 Action 推進 -->
+      <par def='1'>狀態：
+        <field kind='computed when composed' name='processStatus' type='text'>
+          <code event='value'><formula>"待處理"</formula></code>
+        </field>
+      </par>
+
+      <!-- 私密內文 -->
+      <par def='1'>備註：
+        <field kind='editable' name='note' type='richtext'/>
+      </par>
+    </richtext>
+  </body>
+
+  <!-- Action 按鈕：示範狀態推進（核准），以 Role 控制顯示 -->
+  <actionbar>
+    <action title='核准' hide='formula'>
+      <hidewhen><formula>
+        !@IsMember("[Approver]"; @UserRoles) | processStatus != "待處理"
+      </formula></hidewhen>
+      <code event='click'><formula>
+        FIELD processStatus := "核准";
+        FIELD approveNotesID := @Name([CN]; @UserName);
+        FIELD approveDate := @Now;
+        @Command([FileSave]); @Command([FileCloseWindow])
+      </formula></code>
+    </action>
+  </actionbar>
+</form>
